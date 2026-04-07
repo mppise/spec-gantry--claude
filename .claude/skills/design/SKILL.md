@@ -24,7 +24,7 @@ The component that is being designed in this phase is {{ functional_component_na
 ```
 | [] | ID | Feature | Description | Priority (Must-have / Nice-to-have) |
 | :--: | :-- | :-- | :-- | :--: |
-{{ [X] indicates my confirmation of the feature as a requirement. [-] indicates feature should be ignored, while [ ] indicates that the feature is still under consideration and needs further discussion. }}
+{{ [X] indicates confirmation of the feature build complete. [-] indicates feature build was ignored, while [ ] indicates that the feature was identified but is not yet built. Fill the table with all identified features for this component, and ensure that the descriptions are clear and concise to facilitate understanding by both technical and non-technical stakeholders. }}
 ```
 
 - **B_Dependencies.md**: Identify which other components this component relies on. This should include both internal dependencies (other components within the architecture) and external dependencies (third-party services, libraries, etc.).
