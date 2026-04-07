@@ -10,7 +10,9 @@ license: Apache-2.0 (see LICENSE in project root)
 
 The objective of this skill is to implement the specified functional component by relying on your project knowledge from the `./.artifacts` directory, but also the specifications created in the detailed design phase for that component. Code written in this phase must be correct, maintainable by a human developer, and traceable back to the architecture and component specifications.
 
-Begin by capturing the current pulse of the project in terms of assumptions, decisions, and risks. Ackowledgement of all assumptions, decisions, and risks is NECESSARY before moving on to the actual development phase.
+Begin by capturing the current pulse of the project in terms of assumptions, decisions, and risks. These will be updated throughout the development phase as the development takes shape. 
+
+**NOTE**: Proceed ONLY when you find that all assumptions, decisions, and risks are acknowledged. Ask me to go into specific artifact files where open items are found.
 
 ## Scoped Component
 
