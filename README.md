@@ -29,32 +29,34 @@ Every assumption is documented. Every decision is traceable. Every risk is logge
 
 ## Core Concepts
 
+## Core Concepts
+
 ### The Two Roles
 
 | Role | Who | Responsibilities |
 | :-- | :-- | :-- |
-| **DevLead** | You | Owns requirements, approves architecture, confirms assumptions/decisions/risks, gates each phase |
-| **SpecGantry** | Claude Code | Asks targeted questions, produces and maintains artifacts, implements code, surfaces risks and decisions |
+| **DevLead** | You | The visionary and final authority. Owns requirements, approves architecture, confirms assumptions/decisions/risks, and acts as the gatekeeper for every phase transition. |
+| **SpecGantry** | Claude Code | The expert orchestrator. Asks targeted questions to eliminate ambiguity, produces and maintains project artifacts, implements code against locked specs, and proactively surfaces risks. |
 
-SpecGantry never auto-approves its own outputs. Everything it produces gets reviewed and confirmed by DevLead before becoming a source of truth.
+SpecGantry operates under a "Zero-Auto-Approval" policy. Every artifact, design decision, and code block produced is a proposal until it is explicitly reviewed and confirmed by the DevLead.
 
 ### The Artifact System
 
-All project knowledge lives in `./.artifacts/` — the **single source of truth** for the entire lifecycle.
+All project knowledge lives in `./.artifacts/` — the **Single Source of Truth (SSOT)**. By decoupling the "knowledge" (artifacts) from the "implementation" (code), the framework ensures that the logic is validated before it is built.
 
 | File | Author | Reviewer | Purpose |
 | :-- | :-- | :-- | :-- |
-| `A_Project.md` | DevLead | SpecGantry | What you're building: requirements, target user, core features, success criteria |
-| `B_Architecture.md` | SpecGantry | DevLead | How it's built: components, tech stack, data, APIs, security, deployment, testing |
-| `C_Assumptions.md` | SpecGantry | DevLead | Every assumption made during the engagement |
-| `D_Decisions.md` | SpecGantry | DevLead | Every key design decision |
-| `E_Risks.md` | SpecGantry | DevLead | Every identified project risk |
+| `A_Project.md` | DevLead | SpecGantry | **The "What" & "Why"**: High-level requirements, target user, core features, and success criteria. |
+| `B_Architecture.md` | SpecGantry | DevLead | **The "How"**: System design, tech stack, data models, API contracts, security, and deployment strategy. |
+| `C_Assumptions.md` | SpecGantry | DevLead | **The "Given"**: Explicitly logs every assumption to prevent "hidden" bugs in the planning phase. |
+| `D_Decisions.md` | SpecGantry | DevLead | **The "Choice"**: A permanent record of why a specific technology or pattern was chosen over alternatives. |
+| `E_Risks.md` | SpecGantry | DevLead | **The "Warning"**: Proactive identification of technical, operational, or timeline risks. |
 
-Assumptions, decisions, and risks use checkbox notation so DevLead can interact with them directly:
+Assumptions, decisions, and risks use a **Confirmation Workflow** via checkbox notation:
 
-- `[ ]` — Pending DevLead review
-- `[X]` — Confirmed / Approved
-- `[-]` — Rejected
+- `[ ]` — **Pending**: SpecGantry has proposed this; awaiting DevLead review.
+- `[X]` — **Confirmed**: Approved by DevLead and now considered a project fact.
+- `[-]` — **Rejected**: Discarded by DevLead; requires an alternative approach.
 
 ### The Phase Gates
 
