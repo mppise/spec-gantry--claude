@@ -16,7 +16,7 @@ Begin by capturing the current pulse of the project in terms of assumptions, dec
 
 ## Scoped Component
 
-The component that is being developed in this phase is {{ functional_component_name }}. Refer to `./.components/{{ functional_component_name }}/` directory for detailed specifications about this component, and implement the features and tasks identified in those specifications. 
+The component that is being developed in this phase is {{ functional_component_name }}. Refer to `./.components/{{ functional_component_name }}/` directory for detailed specifications about this component, and implement the features and tasks identified in those specifications. You must mark these features as '[X]' indicating their completion throughout the development phase as the development takes shape.
 
 
 # How This Skill Works
