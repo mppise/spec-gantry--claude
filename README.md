@@ -120,8 +120,10 @@ MAINTENANCE   /ideate  /brainstorm  /explain-code
 
 SpecGantry reads `A_Project.md` and asks targeted questions until every section is specific enough to act on. It challenges completeness, feasibility, clarity, and consistency — and refuses to move forward until the answers are.
 
-**You do:** Fill in `A_Project.md` with your idea. Answer SpecGantry's questions.  
-**SpecGantry does:** Identify gaps, insert `<!-- comment -->` prompts in the file, validate your answers.  
+**You do:** Fill in `A_Project.md` with your idea. Answer SpecGantry's questions. 
+
+**SpecGantry does:** Identify gaps, insert `<!-- comment -->` prompts in the file, validate your answers. 
+
 **Gate:** DevLead confirms `A_Project.md` is complete and unambiguous.
 
 ---
@@ -138,7 +140,9 @@ SpecGantry works through architecture topics one at a time — from tech stack a
 After all topics are defined, SpecGantry stress-tests the architecture across four dimensions: consistency, completeness, risk, and simplicity.
 
 **You do:** Answer questions, confirm/reject items in `C_Assumptions.md`, `D_Decisions.md`, `E_Risks.md`.  
+
 **SpecGantry does:** Write `B_Architecture.md`, surface every assumption, decision, and risk it encounters.  
+
 **Gate:** All architecture sections fully defined. DevLead reviews and acts on all checkboxes.
 
 ---
@@ -151,7 +155,9 @@ After all topics are defined, SpecGantry stress-tests the architecture across fo
 SpecGantry creates a set of dedicated specification files (Purpose, Dependencies, Data, etc.) for each component identified in the architecture. This ensures that the development phase is a purely mechanical implementation of a validated design.
 
 **You do:** Review component specifications, confirm technical details.
+
 **SpecGantry does:** Produce specification documents in `./components/{{component_name}}/`.
+
 **Gate:** All component specifications completed and approved.
 
 ---
@@ -173,7 +179,9 @@ SpecGantry creates a set of dedicated specification files (Purpose, Dependencies
 | AI Integration | `./src/ai` |
 
 **You do:** Review code, approve new artifact entries, unblock SpecGantry when questions arise.  
-**SpecGantry does:** Implement components, keep artifacts current, surface anything that diverges from the spec.  
+
+**SpecGantry does:** Implement components, keep artifacts current, surface anything that diverges from the spec. 
+
 **Gate:** All planned features implemented and traceable to `B_Architecture.md`.
 
 ---
@@ -198,7 +206,9 @@ SpecGantry runs seven sequential reviews. Each item is checked off only after th
 All outputs land in `./.artifacts/rel_yyyy.mm.dd_hhmm/`.
 
 **You do:** Resolve blockers flagged by SpecGantry, review the release package, approve deployment.  
+
 **SpecGantry does:** Run all seven reviews, document findings, produce deploy scripts only when the path is clear.  
+
 **Gate:** Zero blockers. DevLead approves the release package. Version History entry written to `STATUS.md`.
 
 ---
@@ -212,12 +222,12 @@ This is a manual act — not a skill. DevLead reviews `./deploy/config.json` to 
 ---
 
 ### Maintenance
+> `/ideate` · `/brainstorm` · `/explain-code`
 
 **Purpose:** Operate and evolve the live software.
 
 There is no exit gate from Maintenance. For any new feature or meaningful change, restart from Ideation. For debugging, design decisions, or understanding existing code, use the skills below.
 
-Available skills: `/ideate` · `/brainstorm` · `/explain-code`
 
 ---
 
@@ -253,6 +263,7 @@ Available skills: `/ideate` · `/brainstorm` · `/explain-code`
    ```
    claude
    ```
+   Or open in an Integrated Development Environment (IDE).
 
 4. **Invoke the ideation skill:**
    ```
