@@ -19,9 +19,9 @@ Spec-Driven Development is the practice of treating specifications as first-clas
 
 1. **Specify** what you are building and why (`A_Project.md`)
 2. **Architect** how it will be built, with all decisions made explicit (`B_Architecture.md`)
-3. **Design** the detailed specifications for each component (`./components/`)
+3. **Design** the detailed specifications for each component (`./SPECS/components`)
 4. **Build** only against that locked specification (`./src/`)
-5. **Ship** only after a structured release readiness review (`./.artifacts/rel_*/`)
+5. **Ship** only after a structured release readiness review (`./SPECS/artifacts/rel_*/`)
 
 Every assumption is documented. Every decision is traceable. Every risk is logged. Code is never written until the spec is validated and approved by the team lead.
 
@@ -42,7 +42,7 @@ SpecGantry operates under a "Zero-Auto-Approval" policy. Every artifact, design 
 
 ### The Artifact System
 
-All project knowledge lives in `./.artifacts/` — the **Single Source of Truth (SSOT)**. By decoupling the "knowledge" (artifacts) from the "implementation" (code), the framework ensures that the logic is validated before it is built.
+All project knowledge lives in `./SPECS/artifacts/` — the **Single Source of Truth (SSOT)**. By decoupling the "knowledge" (artifacts) from the "implementation" (code), the framework ensures that the logic is validated before it is built.
 
 | File | Author | Reviewer | Purpose |
 | :-- | :-- | :-- | :-- |
@@ -84,7 +84,7 @@ Raw Idea
    ▼
 ┌─────────────────────────────────────────────────┐
 │  DETAILED DESIGN /design                        │
-│  Component-level specs defined in ./components/ │
+│  Component-level specs defined in ./SPECS/components │
 └────────────────────────── GATE: Specs approved ─┘
    │
    ▼
@@ -158,7 +158,7 @@ SpecGantry creates a set of dedicated specification files (Purpose, Dependencies
 
 **You do:** Review component specifications, confirm technical details.
 
-**SpecGantry does:** Produce specification documents in `./components/{{component_name}}/`.
+**SpecGantry does:** Produce specification documents in `./SPECS/components{{component_name}}/`.
 
 **Gate:** All component specifications completed and approved.
 
@@ -205,7 +205,7 @@ SpecGantry runs seven sequential reviews. Each item is checked off only after th
 | Communication Draft | `communication.md` | Yes |
 | Deployment Scripts | `./deploy/go.sh` + `./deploy/config.json` | Produced only if no blockers |
 
-All outputs land in `./.artifacts/rel_yyyy.mm.dd_hhmm/`.
+All outputs land in `./SPECS/artifacts/rel_yyyy.mm.dd_hhmm/`.
 
 **You do:** Resolve blockers flagged by SpecGantry, review the release package, approve deployment.  
 
@@ -240,7 +240,7 @@ There is no exit gate from Maintenance. For any new feature or meaningful change
 | `/ideate` | Ideation | Validates and completes `A_Project.md` through targeted Q&A |
 | `/plan` | Planning | Builds `B_Architecture.md` one topic at a time; surfaces assumptions, decisions, risks |
 | `/brainstorm` | Any | Structured Lincoln-Douglas debate across three personas (Affirmative, Negative, Judge) to resolve trade-offs |
-| `/design` | Detailed Design | Produces granular component specifications in `./components/` |
+| `/design` | Detailed Design | Produces granular component specifications in `./SPECS/components` |
 | `/develop` | Development | Implements features in `./src/` traceable to architecture; keeps artifacts current |
 | `/deployment-readiness` | Pre-Deployment | Seven-stage release review; produces release package and deploy scripts |
 | `/documentation` | Development+ | Generates Bootstrap-styled HTML user documentation for features in `<UX dir>/docs/` |
@@ -259,7 +259,7 @@ There is no exit gate from Maintenance. For any new feature or meaningful change
 
 1. **Clone or copy this framework** into your project directory.
 
-2. **Populate `./.artifacts/A_Project.md`** with your project idea. Fill in what you know — SpecGantry will surface the gaps.
+2. **Populate `./SPECS/artifacts/A_Project.md`** with your project idea. Fill in what you know — SpecGantry will surface the gaps.
 
 3. **Start Claude Code** in the project directory:
    ```

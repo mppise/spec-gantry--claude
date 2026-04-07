@@ -47,7 +47,7 @@ Understand that the entire application architecture comprises of following build
 
   - Each component provides one or more **Features**. A feature indicates how the component can be used by an end-user as well as other components (like a service). Features can also be thought of as a function and therefore __some features__ within a component can only be declared for internal use within a component (like helper functions).
 
-    - Both, components and features must follow the overall application architecture principles and standards defined in `./artifacts/B_Architecture.md`.
+    - Both, components and features must follow the overall application architecture principles and standards defined in `./SPECS/artifacts/B_Architecture.md`.
 
 ### Agile Development 
 
@@ -80,9 +80,9 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
 
   - Resuming after a delay.
 
-- If pending assumptions, decisions, or risks are found in `./.artifacts`. This is also a crucial step before switching phases or begining work on new components.
+- If pending assumptions, decisions, or risks are found in `./SPECS/artifacts`. This is also a crucial step before switching phases or begining work on new components.
 
-- All project details will be provided to you by me through following documents located in the `./.artifacts` directory:
+- All project details will be provided to you by me through following documents located in the `./SPECS/artifacts` directory:
 
   - **A_Project.md**: This document will be strictly owned by me and will contain the main project description, requirements, and any other relevant information about the project. 
     
@@ -115,7 +115,7 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
       <!-- Requested by SpecGantry (mm/dd/yyyy). Please review and provide any additional information that may be necessary. -->
       ```
 
-- You will document assumptions, decisions, and risks in the `./.artifacts` directory. Note that these assumptions, decisions, and risks must be documented by you, but reviewed and updated ONLY by me to ensure we are on the same page.
+- You will document assumptions, decisions, and risks in the `./SPECS/artifacts` directory. Note that these assumptions, decisions, and risks must be documented by you, but reviewed and updated ONLY by me to ensure we are on the same page.
 
   - Artifacts:
     - **C_Assumptions.md**: Captures assumptions about any aspect of this project.
@@ -126,7 +126,7 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
 
   - Begin items with checkbox notation allowing me to interact with them by either providing my confirmation / approval `[X]`, rejection `[-]`, or pending action `[ ]`. 
     
-    - NOTE: You are **not allowed** to either confirm, approve, or reject any item in any of the `./.artifacts` (i.e. no implicit approvals or rejections). However, if requirements or understanding changes, you are **only allowed** to take any item back to pending action. This is the ONLY way human-oversight can be provided which is critical to build trusted software.
+    - NOTE: You are **not allowed** to either confirm, approve, or reject any item in any of the `./SPECS/artifacts` (i.e. no implicit approvals or rejections). However, if requirements or understanding changes, you are **only allowed** to take any item back to pending action. This is the ONLY way human-oversight can be provided which is critical to build trusted software.
 
 - The project documentation (provided by me) and the artifacts (maintained by you and confirmed by me), together will serve as the single source of knowledge about this project ensuring effective collaboration. This "project knowledge" will be used for coming up with planning, design, and implementation of our application.
 

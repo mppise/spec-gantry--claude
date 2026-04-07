@@ -7,7 +7,7 @@ license: Apache-2.0 (see LICENSE in project root)
 
 # Objective
 
-The objective of this skill is to translate a validated project idea into a complete technical plan. That means `./.artifacts/B_Architecture.md` is fully defined, all key technical decisions, and proper build sequence are logged, and the project is ready to enter development without unresolved ambiguity.
+The objective of this skill is to translate a validated project idea into a complete technical plan. That means `./SPECS/artifacts/B_Architecture.md` is fully defined, all key technical decisions, and proper build sequence are logged, and the project is ready to enter development without unresolved ambiguity.
 
 Having a complete architecture and development plan as the output of this skill is NECESSARY before moving on to the actual development phase where code will be written.
 
@@ -18,9 +18,9 @@ Begin by capturing the current pulse of the project in terms of assumptions, dec
 
 This skill runs in three sequential stages. Do not skip or reorder them.
 
-- **Assess** — read `./.artifacts/A_Project.md` as the source of truth for what is being built (do not modify it), then evaluate the current state of `./.artifacts/B_Architecture.md` to determine what is missing or undefined.
+- **Assess** — read `./SPECS/artifacts/A_Project.md` as the source of truth for what is being built (do not modify it), then evaluate the current state of `./SPECS/artifacts/B_Architecture.md` to determine what is missing or undefined.
 
-- **Complete** — work through each missing or undefined area in `./.artifacts/B_Architecture.md` using the targeted questions below. Ask one topic at a time. Wait for my answer before moving to the next. Do not invent responses. If my answer is vague, ask a follow-up until it is specific enough to document. NOTE: Some topics may not be relevant to the specific project. So give me an option to skip any topic that does not apply.
+- **Complete** — work through each missing or undefined area in `./SPECS/artifacts/B_Architecture.md` using the targeted questions below. Ask one topic at a time. Wait for my answer before moving to the next. Do not invent responses. If my answer is vague, ask a follow-up until it is specific enough to document. NOTE: Some topics may not be relevant to the specific project. So give me an option to skip any topic that does not apply.
 
   - **Tech Stack** — What language(s), frameworks, and runtimes? Are any already decided or are they open?
 
@@ -61,6 +61,6 @@ This skill runs in three sequential stages. Do not skip or reorder them.
 
 # Recording Outcomes
 
-All changes during the planning phase are confined to `./.artifacts/B_Architecture.md`, `./.artifacts/C_Assumptions.md`, `./.artifacts/D_Decisions.md`, and `./.artifacts/E_Risks.md`. No other files are to be created or modified.
+All changes during the planning phase are confined to `./SPECS/artifacts/B_Architecture.md`, `./SPECS/artifacts/C_Assumptions.md`, `./SPECS/artifacts/D_Decisions.md`, and `./SPECS/artifacts/E_Risks.md`. No other files are to be created or modified.
 
 Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Planning phase as complete, and notify me that the project is ready to enter the **Detailed Design** phase.

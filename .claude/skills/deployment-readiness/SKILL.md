@@ -20,7 +20,7 @@ For each section, you will begin by first listing all review items that need to 
 
 # How This Skill Works
 
-This skill runs in seven sequential stages. Do not skip or reorder them. Each stage corresponds to a specific aspect of release readiness and will produce its own log file in the `./.artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory. The stages are as follows:
+This skill runs in seven sequential stages. Do not skip or reorder them. Each stage corresponds to a specific aspect of release readiness and will produce its own log file in the `./SPECS/artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory. The stages are as follows:
 
 ## 1. Components Included in Release (`components.md`)
 
@@ -125,8 +125,8 @@ Prepare a deployment shell scripts (`./deploy/go.sh`), configuration files (`./d
 
 # Recording Outcomes
 
-Only the release readiness log files stated in each section will be created in the `./.artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory. No other artifacts must be updated during this phase.
+Only the release readiness log files stated in each section will be created in the `./SPECS/artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory. No other artifacts must be updated during this phase.
 
-Only if a fresh deployment readiness is requested, ignore any previous runs and start with a clean `./.artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory otherwise assume the latest run is being used to determine the change in status of the blockers.
+Only if a fresh deployment readiness is requested, ignore any previous runs and start with a clean `./SPECS/artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory otherwise assume the latest run is being used to determine the change in status of the blockers.
 
 Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Deployment phase as complete, and notify me that the project is ready to enter the **Deployment** phase. At this point, also add an entry to the "Version History" in `./STATUS.md` marking the new version as `[X]` Active — it has cleared deployment readiness and is ready to deploy.
