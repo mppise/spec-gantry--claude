@@ -29,9 +29,11 @@ The project lifecycle consists of five main phases:
 
 - **Planning**: This is the phase where we will define the project requirements, goals, and objectives. We will also create a project plan and identify any potential risks or challenges that may arise during the project.
 
-- **Development**: This is the phase where we will actually build the software. We will write code, test it, and debug any issues that arise. We will also maintain documentation to ensure that the software can be easily understood and maintained by others in the future.
+- **Detailed Design**: This phase allows product teams to independently prepare detailed designs of functional components identified during the overall architecture planning phase.
 
-- **Deployment**: This is the phase where we will deploy the software to production. Deployment can only begin if the deployment readiness is completed and points to no blockers.
+- **Development**: This is the phase where we will actually build the components as they are released for development. We will write code, test it, and debug any issues that arise. We will also maintain documentation to ensure that the component can be easily understood and maintained by others in the future.
+
+- **Deployment**: This is the phase where we will deploy one or more components to production. Deployment can only begin if the deployment readiness is completed for those components and no open blockers are identified that will prevent deployment. This is to ensure error-free deployments and zero-rollbacks due to coding errors.
 
 - **Maintenance**: This is the phase where we will maintain the software after it has been released. We will fix any bugs that arise, add new features as needed, and ensure that the software continues to meet the needs of its users.
 
@@ -110,8 +112,10 @@ You have access to following skills that will help you perform your tasks:
 
 - **/brainstorm**: To brainstorm on any topic related to the project. This can be used in any phase of the project lifecycle.
 
-- **/plan**: To develop the idea into solid architecture that can be implemented. This will help us ensure the architecture is complete and well thought out before we move to the development phase.
+- **/plan**: To develop the idea into solid architecture that can be implemented. This will help us ensure the architecture is complete and well thought out before we move to the detailed design phase.
 
-- **/develop**: To write code for the project. This will help us ensure the code is of high quality and maintainable by a human developer.
+- **/design**: To design detailed specifications of functional components. This will help us ensure that enough attention is provided to design all functional components that will ultimately be responsible for successful function of the full application.
 
-- **/deployment-readiness**: To ensure the software is ready for deployment. Also prepares the deployment scripts and configurations. This will help us ensure the software is ready for deployment and there are no blockers before we move to the deployment phase.
+- **/develop**: To write code for components after completing detailed design. This will help us ensure the code is of high quality and maintainable by a human developer.
+
+- **/deployment-readiness**: To ensure the entire software is ready for deployment. Also prepares the deployment scripts and configurations. This will help us ensure the software is ready for deployment and there are no blockers before we move to the deployment phase.

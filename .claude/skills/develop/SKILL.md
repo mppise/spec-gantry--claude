@@ -1,5 +1,6 @@
 ---
 name: develop
+argument-hint: functional_component_name
 description: Drives the development phase by implementing features against the architecture plan, maintaining artifacts, and keeping the build clean — gating exit via the deployment-readiness skill.
 user-invocable: true
 license: Apache-2.0 (see LICENSE in project root)
@@ -7,18 +8,22 @@ license: Apache-2.0 (see LICENSE in project root)
 
 # Objective
 
-The objective of this skill is to implement the software by relying on your project knowledge from the `./.artifacts` directory. Code written in this phase must be correct, maintainable by a human developer, and traceable back to the architecture.
+The objective of this skill is to implement the specified functional component by relying on your project knowledge from the `./.artifacts` directory, but also the specifications created in the detailed design phase for that component. Code written in this phase must be correct, maintainable by a human developer, and traceable back to the architecture and component specifications.
 
 Begin by capturing the current pulse of the project in terms of assumptions, decisions, and risks. Ackowledgement of all assumptions, decisions, and risks is NECESSARY before moving on to the actual development phase.
+
+## Scoped Component
+
+The component that is being developed in this phase is {{ functional_component_name }}. Refer to `./.components/{{ functional_component_name }}/` directory for detailed specifications about this component, and implement the features and tasks identified in those specifications. 
 
 
 # How This Skill Works
 
 This skill runs in two sequential stages. Do not skip or reorder them.
 
-- **Assess** — read entire project knowledge from the `./.artifacts` directory. Specifically rely on the `./.artifacts/B_Architecture.md` to code all the components in specified build order.
+- **Assess** — read entire project knowledge from the `./.artifacts` directory. Specifically rely on the specfications within `./.components/{{ functional_component_name }}` to code all the components in specified build order.
 
-- **Complete** — implement the features and tasks identified in the assessment Write maintainable code. Any new assumptions, risks, or unresolved items surfaced during development must be continously logged in the appropriate artifact.
+- **Complete** — implement the features and tasks identified in the assessment. Write maintainable code. Any new assumptions, risks, or unresolved items surfaced during development must be continously logged in the appropriate artifact.
 
 - **Document** — ensure that all code is well-documented with comments explaining the purpose and functionality of complex sections. This will help ensure that the code is maintainable by a human developer in the future.
 

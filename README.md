@@ -19,8 +19,9 @@ Spec-Driven Development is the practice of treating specifications as first-clas
 
 1. **Specify** what you are building and why (`A_Project.md`)
 2. **Architect** how it will be built, with all decisions made explicit (`B_Architecture.md`)
-3. **Build** only against that locked specification (`./src/`)
-4. **Ship** only after a structured release readiness review (`./.artifacts/rel_*/`)
+3. **Design** the detailed specifications for each component (`./components/`)
+4. **Build** only against that locked specification (`./src/`)
+5. **Ship** only after a structured release readiness review (`./.artifacts/rel_*/`)
 
 Every assumption is documented. Every decision is traceable. Every risk is logged. Code is never written until the spec is validated and approved by the team lead.
 
@@ -70,26 +71,26 @@ Raw Idea
 ┌─────────────────────────────────────────────────┐
 │  IDEATION     /ideate                           │
 │  A_Project.md validated and complete            │
-└───────────────────────── GATE: DevLead confirms ┘
+└──────────────────────── GATE: DevLead confirms ─┘
    │
    ▼
 ┌─────────────────────────────────────────────────┐
 │  PLANNING     /plan  /brainstorm                │
 │  B_Architecture.md + C/D/E artifacts defined    │
-└───────────────────────── GATE: DevLead confirms ┘
+└──────────────────────── GATE: DevLead confirms ─┘
    │
    ▼
 ┌─────────────────────────────────────────────────┐
 │  DEVELOPMENT  /develop  /brainstorm             │
 │  ./src/ implemented, artifacts kept current     │
-└──────────── GATE: All planned features built ───┘
+└─────────────── GATE: Detailed Design completed ─┘
    │
    ▼
 ┌─────────────────────────────────────────────────┐
 │  READINESS    /deployment-readiness             │
 │  Release package: changelog, code review,       │
 │  tech debt, smoke tests, rollback, comms        │
-└────────── GATE: Zero blockers, DevLead approves ┘
+└───────── GATE: Zero blockers, DevLead approves ─┘
    │
    ▼
 ┌─────────────────────────────────────────────────┐
@@ -136,12 +137,23 @@ After all topics are defined, SpecGantry stress-tests the architecture across fo
 
 ---
 
+### Detailed Design
+> `/design`
+
+**Purpose:** Create granular, component-level specifications before implementation.
+
+SpecGantry creates a set of dedicated specification files (Purpose, Dependencies, Data, etc.) for each component identified in the architecture. This ensures that the development phase is a purely mechanical implementation of a validated design.
+
+**You do:** Review component specifications, confirm technical details.
+**SpecGantry does:** Produce specification documents in `./components/{{component_name}}/`.
+**Gate:** All component specifications completed and approved.
+
+---
+
 ### Development 
 > `/develop` + `/brainstorm`
 
-**Purpose:** Implement the software according to the architecture. No surprises — code follows spec.
-
-SpecGantry reads the full artifact set, establishes a build order from `B_Architecture.md`, and implements components in `./src/` (structured according to the scaffolding in `B_Architecture.md`). Any new assumptions, risks, or decisions surfaced during implementation are logged immediately. Use `/brainstorm` if a coding or integration problem has no obvious solution.
+**Purpose:** Implement the software according to the architecture and detailed design specifications. No surprises — code follows spec.
 
 **Source layout (example from B_Architecture.md):**
 

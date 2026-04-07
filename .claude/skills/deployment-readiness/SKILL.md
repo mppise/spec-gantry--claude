@@ -22,7 +22,13 @@ For each section, you will begin by first listing all review items that need to 
 
 This skill runs in seven sequential stages. Do not skip or reorder them. Each stage corresponds to a specific aspect of release readiness and will produce its own log file in the `./.artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory. The stages are as follows:
 
-## 1. Changelog (`changelog.md`)
+## 1. Components Included in Release (`components.md`)
+
+List all components that are included in this release. This should be a comprehensive list of all the components that have changes in this release, including both new features and bug fixes. For each component, provide a brief description of the changes that are included in this release. This will help ensure that all stakeholders have a clear understanding of what is being released and can review the changes accordingly.
+
+It is possible that initially, not all functional components are included in this release. So you must also provide a list of components that are NOT included in this release but are planned for future releases. This will help set expectations and provide visibility into the roadmap for future development.
+
+## 2. Changelog (`changelog.md`)
 
 Summarize all changes since the last release, organized by type:
 
@@ -32,7 +38,7 @@ Summarize all changes since the last release, organized by type:
 
 Format each entry as: `[component/area] Short description of change`
 
-## 2. Code Review Gate (`code-review.md`)
+## 3. Code Review Gate (`code-review.md`)
 
 Review the code for syntax, architecture alignment, security concerns, maintainability issues, and best practices. Also validate if new code introduces side-effects or issues for other components. Identify any issues that should block the release, categorizing them by severity. Group by severity (i.e. SEV-1, SEV-2, SEV-3, where SEV-1 is highest). Use following format for each item:
 
@@ -40,7 +46,7 @@ Review the code for syntax, architecture alignment, security concerns, maintaina
 * [{{ 'X' if review passed, ' ' if review failed }}] **[component/area]** Summarize the impact
 ```
 
-## 3. Technical Debt Scan (`tech-debt.md`)
+## 4. Technical Debt Scan (`tech-debt.md`)
 
 Review the code for following technical debt categories introduced in this release:
 
@@ -64,7 +70,7 @@ Group by severity (i.e. SEV-1, SEV-2, SEV-3, where SEV-1 is highest). Use follow
 * [{{ 'X' if review passed, ' ' if review failed }}] **[category]** Summarize the impact
 ```
 
-## 4. Smoke Test Plan (`smoke-tests.md`)
+## 5. Smoke Test Plan (`smoke-tests.md`)
 
 Note: Execute this step only if code review gate and technical debt scan report no blockers.
 
@@ -82,7 +88,7 @@ Group by category (i.e. USER-FLOW, SYSTEM-CHECK, etc.). Use following format for
 [component/area] Test plan description
 ```
 
-## 5. Rollback Plan (`rollback-plan.md`)
+## 6. Rollback Plan (`rollback-plan.md`)
 
 Note: Execute this step only if code review gate and technical debt scan report no blockers.
 
@@ -96,7 +102,7 @@ Define how to revert if the release needs to be pulled:
 
 - Who needs to be notified and how?
 
-## 6. Communication (`communication.md`)
+## 7. Communication (`communication.md`)
 
 Note: Execute this step only if code review gate and technical debt scan report no blockers.
 
@@ -108,7 +114,7 @@ Draft the release announcement (internal or external as appropriate):
 
 - Known issues or limitations in this release
 
-## 7. Deployment Scripts and Configurations
+## 8. Deployment Scripts and Configurations
 
 Note: Execute this step only if code review gate and technical debt scan report no blockers.
 

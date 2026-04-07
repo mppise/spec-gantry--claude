@@ -7,9 +7,27 @@ description: Describe the technical architecture details for this project.
 
 {{ describe the high-level architecture for this project. }}
 
-## Components
+## Functional Components
 
-{{ identify different modules that must be built for the entire project to be deployed. }}
+{{ identify different functional components that must be built for the entire project to be deployed. list the identified components and populate various fields shown below with extremely high level details since detailed information will be provided in each component's specifications separately:
+
+```
+### [ID#] Component A
+
+| Purpose | <!-- explain purpose --> |
+| Dependencies on other components | <!-- which other components does this component rely on --> |
+| Data elements | <!-- which data elements are involved --> |
+| Background process | <!-- is this a background process (Y/N) --> | 
+| Consumes external services | <!-- which external services does this component consume --> | 
+| Exposes services | <!-- which services does this component expose --> | 
+| Uses AI capabilities | <!-- does this component provide any AI capabilities --> | 
+| Consumes Events | <!-- which Events does this component consume --> | 
+| Produces Events | <!-- which Events does this component produce --> | 
+| NFR | <!-- specify critical non-functional requirements (NFR), such as, performance, accessibility, security, etc.  --> | 
+
+```
+
+as you identify each component and list the details, create a sub-directory for that component under `./components` directory. there may be one or more additional specifications created within the sub-directory during detailed design phase. }}
 
 ## Technical-Stack
 
@@ -45,9 +63,6 @@ Since the preferred platform for this project is {{ Google Cloud Platform | Micr
     }
     ```
 
-## Development Strategy
-
-{{ should a specific sequence be adopted to build individual components or technology stacks? }}
 
 ## Deployment Strategy
 

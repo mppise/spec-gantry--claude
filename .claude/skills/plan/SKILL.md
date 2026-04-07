@@ -63,4 +63,4 @@ This skill runs in three sequential stages. Do not skip or reorder them.
 
 All changes during the planning phase are confined to `./.artifacts/B_Architecture.md`, `./.artifacts/C_Assumptions.md`, `./.artifacts/D_Decisions.md`, and `./.artifacts/E_Risks.md`. No other files are to be created or modified.
 
-Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Planning phase as complete, and notify me that the project is ready to enter the **Development** phase.
+Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Planning phase as complete, and notify me that the project is ready to enter the **Detailed Design** phase.

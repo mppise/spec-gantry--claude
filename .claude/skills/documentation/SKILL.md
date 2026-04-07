@@ -52,5 +52,3 @@ This skill operates in three main stages. Do not skip or reorder them.
 # Recording Outcomes
 
 All documentations will be stored in the `<UX code directory>/docs` sub-directory. Each documentation file should be named according to the feature it describes, following a consistent naming convention (e.g., `feature_name.html`).
-
-No files (artifacts, code, etc.) are generated or updated by this skill. This skill will produce a well-formatted explanation of the code snippet provided as input. This explanation should be clear and easy to understand, even for those who may not be familiar with the programming language used in the code.
