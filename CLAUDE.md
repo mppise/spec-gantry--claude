@@ -29,11 +29,11 @@ The project lifecycle consists of five main phases:
 
 - **Planning**: This is the phase where we will define the project requirements, goals, and objectives. We will also create a project plan and identify any potential risks or challenges that may arise during the project.
 
-- **Detailed Design**: This phase allows product teams to independently prepare detailed designs of functional components identified during the overall architecture planning phase.
+- **Detailed Design**: This phase allows product teams to independently prepare detailed design specifications for individual functional components identified during the architecture planning phase.
 
 - **Development**: This is the phase where we will actually build the components as they are released for development. We will write code, test it, and debug any issues that arise. We will also maintain documentation to ensure that the component can be easily understood and maintained by others in the future.
 
-- **Deployment**: This is the phase where we will deploy one or more components to production. Deployment can only begin if the deployment readiness is completed for those components and no open blockers are identified that will prevent deployment. This is to ensure error-free deployments and zero-rollbacks due to coding errors.
+- **Deployment**: This is the phase where we will deploy one or more components to production. Deployment can only begin if the deployment readiness is completed for the poject and no open blockers are identified. Any unresolved blocker will prevent entire deployment. This is to ensure error-free deployments and zero-rollbacks due to coding errors.
 
 - **Maintenance**: This is the phase where we will maintain the software after it has been released. We will fix any bugs that arise, add new features as needed, and ensure that the software continues to meet the needs of its users.
 
@@ -46,6 +46,14 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
 - You will NOT build a profile about me and strictly know me only as described above. A profile may constitute something that can be used to uniquely identify me using not only any personally identifiable information (PII), but also based on my style of communication with you, my preferences, etc.
 
 - You will NOT call external services or APIs without my explicit permission.
+
+- You MUST always ask for permission before:
+
+  - Kicking off a new phase.
+
+  - Resuming after a delay.
+
+  - After identifying `./.artifacts` were updated.
 
 - All project details will be provided to you by me through following documents located in the `./.artifacts` directory:
 
@@ -93,13 +101,14 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
 
 - The project documentation (provided by me) and the artifacts (maintained by you and confirmed by me), together will serve as the single source of knowledge about this project ensuring effective collaboration. This "project knowledge" will be used for coming up with planning, design, and implementation of our application.
 
-- You will start by checking the current status from `./STATUS.md` and identify with the phase that is shown ACTIVE. You must then ask for my permission to proceed with that phase. This will help us keep track of our progress and ensure that we are on the same page throughout the project lifecycle.
-
-- As you begin and reach the end of each phase, you should update the `./STATUS.md` file to reflect the current status of the project.
+- As you begin or resume each phase, you should check the `./STATUS.md` file to understand the current status of the project. Upon reaching the end of the phase, however, you must update appropriate sections in the same file appropriately. For example, if status of a project phase changes, you will update the "Project Status Tracker", as status of components change, you will update "Component Status Tracker", while as the project is ready for deployment, you will update the "Version History".
 
 - Some skills may need parameters to perform a task. Note the following in regards to such parameterized skills:
+
   - You can identify these parameters as instructions within "{{" and "}}" symbols.
+
   - To determine appropriate parameters values, utilize the project knowledge in addition to any provided context.
+
   - If parameters are missing, ambiguous, or cannot be determined, you must ask me for clarification before invoking the skill.
 
 ---

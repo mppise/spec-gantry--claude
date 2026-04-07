@@ -81,9 +81,15 @@ Raw Idea
    │
    ▼
 ┌─────────────────────────────────────────────────┐
+│  DETAILED DESIGN /design                        │
+│  Component-level specs defined in ./components/ │
+└────────────────────────── GATE: Specs approved ─┘
+   │
+   ▼
+┌─────────────────────────────────────────────────┐
 │  DEVELOPMENT  /develop  /brainstorm             │
 │  ./src/ implemented, artifacts kept current     │
-└─────────────── GATE: Detailed Design completed ─┘
+└──────────────────── GATE: Features implemented ─┘
    │
    ▼
 ┌─────────────────────────────────────────────────┐
@@ -125,7 +131,7 @@ SpecGantry reads `A_Project.md` and asks targeted questions until every section 
 
 **Purpose:** Translate `A_Project.md` into a complete technical architecture with all decisions, assumptions, and risks captured.
 
-SpecGantry works through fifteen architecture topics one at a time — from tech stack and components through security, compliance, deployment, and testing strategy. It populates `B_Architecture.md` and surfaces items into `C_Assumptions.md`, `D_Decisions.md`, and `E_Risks.md` as it goes. Use `/brainstorm` when a decision has significant trade-offs.
+SpecGantry works through architecture topics one at a time — from tech stack and components through security, compliance, deployment, and testing strategy. It populates `B_Architecture.md` and surfaces items into `C_Assumptions.md`, `D_Decisions.md`, and `E_Risks.md` as it goes. Use `/brainstorm` when a decision has significant trade-offs.
 
 **Topics covered:** Tech Stack · Components / Modules · Data · APIs / Interfaces · AI Integration · User Experience · Observability · Security · Compliance & Privacy · Third-Party Integrations · Scalability · Error Handling & Resilience · Notifications & Messaging · Deployment · Testing Strategy
 
@@ -222,6 +228,7 @@ Available skills: `/ideate` · `/brainstorm` · `/explain-code`
 | `/ideate` | Ideation | Validates and completes `A_Project.md` through targeted Q&A |
 | `/plan` | Planning | Builds `B_Architecture.md` one topic at a time; surfaces assumptions, decisions, risks |
 | `/brainstorm` | Any | Structured Lincoln-Douglas debate across three personas (Affirmative, Negative, Judge) to resolve trade-offs |
+| `/design` | Detailed Design | Produces granular component specifications in `./components/` |
 | `/develop` | Development | Implements features in `./src/` traceable to architecture; keeps artifacts current |
 | `/deployment-readiness` | Pre-Deployment | Seven-stage release review; produces release package and deploy scripts |
 | `/documentation` | Development+ | Generates Bootstrap-styled HTML user documentation for features in `<UX dir>/docs/` |

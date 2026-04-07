@@ -26,7 +26,9 @@ This skill runs in seven sequential stages. Do not skip or reorder them. Each st
 
 List all components that are included in this release. This should be a comprehensive list of all the components that have changes in this release, including both new features and bug fixes. For each component, provide a brief description of the changes that are included in this release. This will help ensure that all stakeholders have a clear understanding of what is being released and can review the changes accordingly.
 
-It is possible that initially, not all functional components are included in this release. So you must also provide a list of components that are NOT included in this release but are planned for future releases. This will help set expectations and provide visibility into the roadmap for future development.
+Use a table format for clarity, with columns for Component Name, Included in Release (Yes/No), and Description of Changes.
+
+Note: It is possible that initially, not all functional components are included in this release. So you must also provide a list of components that are NOT included in this release but are planned for future releases. This will help set expectations and provide visibility into the roadmap for future development. `./STATUS.md` may be used as a reference to determine which components are included in this release and which are not, but the final list should be based on the actual changes that are being released, not just the status tracker. Ensure that the list is accurate and reflects the current state of the project.
 
 ## 2. Changelog (`changelog.md`)
 

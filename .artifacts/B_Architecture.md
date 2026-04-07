@@ -27,7 +27,7 @@ description: Describe the technical architecture details for this project.
 
 ```
 
-as you identify each component and list the details, create a sub-directory for that component under `./components` directory. there may be one or more additional specifications created within the sub-directory during detailed design phase. }}
+as you identify each component and list the details, create a sub-directory for that component under `./components` directoryto store multiple specification files created within the sub-directory during detailed design phase. }}
 
 ## Technical-Stack
 

@@ -51,4 +51,6 @@ This skill runs in two sequential stages. Do not skip or reorder them.
 
 The specification will be created in `./components/{{ functional_component_name }}` directory, but no files should be created or modified outside of this sub-directory during this phase, except for logging any new assumptions, risks, or unresolved items in the appropriate artifact in the `./.artifacts` directory.
 
-Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Detailed Design phase as "Ready", and notify me that the component is ready to enter the **Development** phase.
+Update the "Component Status Tracker" in `./STATUS.md` to reflect the current status of the detailed design for this component. Do not update status for any other component.
+
+Only once all components are completed, update the "Project Status Tracker" in `./STATUS.md` to indicate that the detailed design phase is complete, and notify me that the project is ready to enter the **Development** phase for this component.

@@ -36,4 +36,4 @@ The source code itself will be created in `/src` directory, but no files should 
 
 Code must follow a specific scaffolding and formatting style to ensure maintainability. All code should be traceable back to the architecture document. Any new assumptions, risks, or unresolved items surfaced during development must be logged in the appropriate artifact in the `./.artifacts` directory.
 
-Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Development phase as complete, and notify me that the project is ready to enter the **Deployment** phase.
+Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Development phase as complete, and notify me that the project is ready to enter the **Deployment** phase. However, do note that the project will only be considered fully ready for deployment once the `deployment-readiness` skill is successfully completed, which will involve a comprehensive review of the entire project to ensure that all aspects are in place for a successful deployment.
