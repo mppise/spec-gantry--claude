@@ -16,7 +16,7 @@ Begin by capturing the current pulse of the project in terms of assumptions, dec
 
 ## Scoped Component
 
-The component that is being developed in this phase is {{ functional_component_name }}. Refer to `./.components/{{ functional_component_name }}/` directory for detailed specifications about this component, and implement the features and tasks identified in those specifications. You must mark these features as '[X]' indicating their completion throughout the development phase as the development takes shape.
+The component that is being developed in this phase is {{ functional_component_name }}. Refer to `./.components/{{ functional_component_name }}/` directory for detailed specifications about this component, and implement the features and tasks identified in those specifications.
 
 
 # How This Skill Works
@@ -34,7 +34,7 @@ This skill runs in two sequential stages. Do not skip or reorder them.
 
 # Recording Outcomes
 
-The source code itself will be created in `/src` directory, but no files should be created or modified outside of that during this phase. 
+The source code itself will be created in `/src` directory, but no files should be created or modified outside of that during this phase. You must also make sure that you mark features listed in `./.components/{{ functional_component_name }}/A_Purpose.md` as '[X]' indicating their completion throughout the development phase as the development takes shape.
 
 Code must follow a specific scaffolding and formatting style to ensure maintainability. All code should be traceable back to the architecture document. Any new assumptions, risks, or unresolved items surfaced during development must be logged in the appropriate artifact in the `./.artifacts` directory.
 
