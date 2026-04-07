@@ -17,7 +17,7 @@ Begin by capturing the current pulse of the project in terms of assumptions, dec
 
 ## Scoped Component
 
-The component that is being designed in this phase is {{ functional_component_name }}. Refer to the `./.artifacts/B_Architecture.md` file for high-level details about this component, and create detailed specifications in following parts, where each part is created as a separate specification document under `./components/{{ functional_component_name }}` directory:
+The component that is being designed in this phase is {{ functional_component_name }}. Refer to the `./.artifacts/B_Architecture.md` file for high-level details about this component, and create detailed specifications in following parts, where each part is created as a separate specification document under `./.components/{{ functional_component_name }}` directory:
 
 - **A_Purpose.md**: Describe the purpose of this component in detail. This should include the functionality it provides, the problems it solves, and how it fits into the overall architecture. In addition to purpose, also list all the "features" that this component must have to fulfill its purpose. While listing the features, also provide a brief description for each feature, and identify which features are "must-have" vs "nice-to-have". This will help in prioritization during development and ensure that critical functionality is delivered first. Format the features in a table with the following columns: 
 
@@ -57,7 +57,7 @@ This skill runs in two sequential stages. Do not skip or reorder them.
 
 # Recording Outcomes
 
-The specification will be created in `./components/{{ functional_component_name }}` directory, but no files should be created or modified outside of this sub-directory during this phase, except for logging any new assumptions, risks, or unresolved items in the appropriate artifact in the `./.artifacts` directory.
+The specification will be created in `./.components/{{ functional_component_name }}` directory, but no files should be created or modified outside of this sub-directory during this phase, except for logging any new assumptions, risks, or unresolved items in the appropriate artifact in the `./.artifacts` directory.
 
 Update the "Component Status Tracker" in `./STATUS.md` to reflect the current status of the detailed design for this component. Do not update status for any other component.
 
