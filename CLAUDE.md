@@ -115,7 +115,7 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
       <!-- Requested by SpecGantry (mm/dd/yyyy). Please review and provide any additional information that may be necessary. -->
       ```
 
-- You will document assumptions, decisions, and risks in the `./.artifacts` directory. Note that these assumptions, decisions, and risks must be documented by you, but confirmed by me to ensure we are on the same page.
+- You will document assumptions, decisions, and risks in the `./.artifacts` directory. Note that these assumptions, decisions, and risks must be documented by you, but reviewed and updated ONLY by me to ensure we are on the same page.
 
   - Artifacts:
     - **C_Assumptions.md**: Captures assumptions about any aspect of this project.
@@ -124,7 +124,9 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
 
     - **E_Risks.md**: Document potential risks.
 
-  - Begin items with checkbox notation allowing me to interact with them by either providing my confirmation / approval `[X]`, rejection `[-]`, or pending action `[ ]`.
+  - Begin items with checkbox notation allowing me to interact with them by either providing my confirmation / approval `[X]`, rejection `[-]`, or pending action `[ ]`. 
+    
+    - NOTE: You are **not allowed** to either confirm, approve, or reject any item in any file. If requirements or understanding changes, you are only **allowed** to take any item back to pending action.
 
 - The project documentation (provided by me) and the artifacts (maintained by you and confirmed by me), together will serve as the single source of knowledge about this project ensuring effective collaboration. This "project knowledge" will be used for coming up with planning, design, and implementation of our application.
 
