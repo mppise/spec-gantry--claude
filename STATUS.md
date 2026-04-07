@@ -7,7 +7,7 @@ description: Maintains status of the project lifecycle develoiped using SpecGant
 
 | Phase | Started on | Completed on | Notes |
 | :-- | :-- | :-- |
-| Ideation [ACTIVE] | {{ active since }} | {{ completed on, else leave empty if active }} | {{ relevant details about the phase in a short single statement }} |
+| Ideation | {{ active since }} | {{ completed on, else leave empty if active }} | {{ relevant details about the phase in a short single statement }} |
 
 # Component Status Tracker
 
