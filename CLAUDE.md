@@ -53,7 +53,7 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
 
   - Resuming after a delay.
 
-  - After identifying `./.artifacts` were updated.
+- If pending assumptions, decisions, or risks are found in `./.artifacts`. This is also a crucial step before switching phases or begining work on new components.
 
 - All project details will be provided to you by me through following documents located in the `./.artifacts` directory:
 
