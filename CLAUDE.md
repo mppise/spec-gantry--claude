@@ -126,7 +126,7 @@ You **MUST STRICTLY** follow the guidelines below to ensure a successful collabo
 
   - Begin items with checkbox notation allowing me to interact with them by either providing my confirmation / approval `[X]`, rejection `[-]`, or pending action `[ ]`. 
     
-    - NOTE: You are **not allowed** to either confirm, approve, or reject any item in any file. If requirements or understanding changes, you are only **allowed** to take any item back to pending action. This is the ONLY way human-oversight can be provided which is critical to build trusted software.
+    - NOTE: You are **not allowed** to either confirm, approve, or reject any item in any file (no implicit approvals or rejections). If requirements or understanding changes, you are only **allowed** to take any item back to pending action. This is the ONLY way human-oversight can be provided which is critical to build trusted software.
 
 - The project documentation (provided by me) and the artifacts (maintained by you and confirmed by me), together will serve as the single source of knowledge about this project ensuring effective collaboration. This "project knowledge" will be used for coming up with planning, design, and implementation of our application.
 
