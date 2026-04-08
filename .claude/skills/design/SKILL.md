@@ -22,9 +22,9 @@ The component that is being designed in this phase is {{ functional_component_na
 - **A_Purpose.md**: Describe the purpose of this component in detail. This should include the functionality it provides, the problems it solves, and how it fits into the overall architecture. In addition to purpose, also list all the "features" that this component must have to fulfill its purpose. While listing the features, also provide a brief description for each feature, and identify which features are "must-have" vs "nice-to-have". This will help in prioritization during development and ensure that critical functionality is delivered first. Format the features in a table with the following columns: 
 
 ```
-| [] | ID | Feature | Description | Priority (Must-have / Nice-to-have) |
+| Status | ID | Feature | Description | Priority (Must-have / Nice-to-have) |
 | :--: | :-- | :-- | :-- | :--: |
-{{ [X] indicates confirmation of the feature build complete. [-] indicates feature build was ignored, while [ ] indicates that the feature was identified but is not yet built. Fill the table with all identified features for this component, and ensure that the descriptions are clear and concise to facilitate understanding by both technical and non-technical stakeholders. }}
+{{ [X] indicates confirmation of the feature build is complete. [-] indicates feature build was ignored, while [ ] indicates that the feature was identified but is not yet built. Fill the table with all identified features for this component, and ensure that the descriptions are clear and concise to facilitate understanding by both technical and non-technical stakeholders. }}
 ```
 
 - **B_Dependencies.md**: Identify which other components this component relies on. This should include both internal dependencies (other components within the architecture) and external dependencies (third-party services, libraries, etc.).
