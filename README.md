@@ -38,35 +38,6 @@ SpecGantry organizes the collaboration between a **DevLead** (you) and **SpecGan
 
 The project's ground truth lives in the `./SPECS/` directory. Source code lives in `./src/`. Deployment artifacts live in `./deploy/`. The `./STATUS.md` file is the single pane of glass for project health at any moment.
 
-```
-SpecGantry-Claude/
-├── CLAUDE.md                     # Roles, engagement contract, and lifecycle rules
-├── STATUS.md                     # Live project/component status tracker + version history
-├── SPECS/
-│   ├── artifacts/
-│   │   ├── A_Project.md          # Project idea, features, success criteria
-│   │   ├── B_Architecture.md     # Technical architecture, tech stack, components
-│   │   ├── C_Assumptions.md      # All assumptions with review status
-│   │   ├── D_Decisions.md        # All decisions with review status
-│   │   └── E_Risks.md            # All risks with review status
-│   └── components/
-│       └── <ComponentName>/      # One sub-directory per functional component
-│           ├── A_Purpose.md      # Features table with build status
-│           ├── B_Dependencies.md
-│           ├── C_Data.md
-│           ├── D_ExecutionMode.md
-│           ├── E_ExternalServices.md
-│           ├── F_ExposedServices.md
-│           ├── G_AICapabilities.md
-│           ├── H_Events.md
-│           └── I_NFR.md
-├── src/                          # All application source code
-├── deploy/
-│   └── rel_YYYY.MM.DD_HH:MM/    # Release readiness package per deployment attempt
-└── .claude/
-    └── skills/                   # Skill definitions for each lifecycle phase
-```
-
 ---
 
 ## Lifecycle Phases
