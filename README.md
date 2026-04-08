@@ -72,23 +72,55 @@ SpecGantry-Claude/
 ## Lifecycle Phases
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                       SpecGantry Lifecycle                              │
-│                                                                         │
-│   ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐  │
-│   │          │   │          │   │ Detailed │   │          │   │Deployment│  │
-│   │Ideation  │──▶│ Planning │──▶│  Design  │──▶│  Develop │──▶│Readiness │  │
-│   │          │   │          │   │          │   │          │   │          │  │
-│   └──────────┘   └──────────┘   └──────────┘   └──────────┘   └──────────┘  │
-│        │              │               │               │               │      │
-│   A_Project.md   B_Architecture  Component specs  ./src/ code   deploy/rel   │
-│   C/D/E artifacts C/D/E artifacts C/D/E artifacts A_Purpose.md  STATUS.md   │
-│                                   STATUS.md        STATUS.md                │
-└─────────────────────────────────────────────────────────────────────────┘
-                                                              │
-                                                              ▼
-                                                     Maintenance ──▶ (repeats cycle
-                                                     [new branch]     on new branch)
+        ┌─────────────────────────────┐
+        │         Ideation            │
+        │  /ideate  /brainstorm       │
+        └──────────────┬──────────────┘
+                       │
+            ◈  GATE: A_Project.md complete
+               + feasibility validated
+                       │
+        ┌──────────────▼──────────────┐
+        │          Planning           │
+        │  /plan  /brainstorm         │
+        └──────────────┬──────────────┘
+                       │
+            ◈  GATE: B_Architecture.md complete
+               + all decisions/assumptions/risks resolved
+                       │
+        ┌──────────────▼──────────────┐
+        │       Detailed Design       │
+        │  /design  /brainstorm       │
+        └──────────────┬──────────────┘
+                       │
+            ◈  GATE: all component specs complete
+               + no open review items
+                       │
+        ┌──────────────▼──────────────┐
+        │         Development         │
+        │  /develop  /explain-code    │
+        └──────────────┬──────────────┘
+                       │
+            ◈  GATE: all features built and marked [X]
+               + user docs generated
+                       │
+        ┌──────────────▼──────────────┐
+        │     Deployment Readiness    │
+        │  /deployment-readiness      │
+        └──────────────┬──────────────┘
+                       │
+            ◈  GATE: no SEV-1/SEV-2 blockers
+               + release package complete
+                       │
+        ┌──────────────▼──────────────┐
+        │          Deploy             │
+        │  (DevLead runs deploy/go.sh)│
+        └──────────────┬──────────────┘
+                       │
+                       ▼
+               Maintenance
+            (new git branch →
+             repeat full cycle)
 ```
 
 ---
