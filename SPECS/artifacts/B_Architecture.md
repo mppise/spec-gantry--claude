@@ -63,7 +63,6 @@ Since the preferred platform for this project is {{ Google Cloud Platform | Micr
     }
     ```
 
-
 ## Deployment Strategy
 
 {{ determine where will each application component and/or architecture layer of the application be deployed? Co-deployment is also an acceptable option depending on complexity of the project. }}

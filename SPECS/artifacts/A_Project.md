@@ -35,3 +35,7 @@ description: Describe the project idea.
 
 - <!-- What must be considered out of scope in this project? -->
 
+## Change History
+
+| Change ID | Change Description | Initiated on |
+| :-- | :--- | :--: |
