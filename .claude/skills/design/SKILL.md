@@ -10,7 +10,7 @@ license: Apache-2.0 (see LICENSE in project root)
 
 The objective of this skill is to drive the detailed design phase for one of the components identified in the architecture planning phase. This is done by relying on your project knowledge from the `./SPECS/artifacts` directory, mainly the `./SPECS/artifacts/B_Architecture.md` file. Specifications created in this phase must be correct, maintainable by technical and functional teams, and traceable back to the architecture.
 
-Begin by capturing the current pulse of the project in terms of assumptions, decisions, and risks. These will be updated throughout the design phase as the individual components take shape. 
+Begin by capturing the current pulse of the project in terms of assumptions, decisions, and risks. These will be updated throughout the design phase as the individual components take shape. If new items are surfaced in any of these areas, they must be logged and you must immediately STOP until I review the item and provide my input.
 
 **NOTE**: Proceed ONLY when you find that all assumptions, decisions, and risks are acknowledged. Ask me to go into specific artifact files where open items are found.
 

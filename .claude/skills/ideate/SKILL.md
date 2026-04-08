@@ -7,9 +7,7 @@ license: Apache-2.0 (see LICENSE in project root)
 
 # Objective
 
-The objective of this skill is to take a project idea — however raw or complete — and drive it to a state where Planning can begin with confidence. That means `./SPECS/artifacts/A_Project.md` is fully populated, feasibility has been assessed, and known unknowns are captured in the artifact system.
-
-Having a full idea of the project as the first step using this skill is NECESSARY before moving on to the actual planning phase where `./SPECS/artifacts/B_Architecture.md` will be solidified.
+The objective of this skill is to take a project idea — however raw or complete — and drive it to a state where Planning can begin with confidence. That means `./SPECS/artifacts/A_Project.md` is fully populated, feasibility has been assessed, and known unknowns are captured in the artifact system. The ideation phase is all about fleshing out the concept, identifying potential challenges, and ensuring that we have a solid foundation to build upon in the subsequent phases of the project lifecycle.
 
 
 # How This Skill Works
