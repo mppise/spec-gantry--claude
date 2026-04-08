@@ -75,7 +75,7 @@ This phase prepares detailed design specifications for individual functional com
 
 In this phase actual build occurs. You will write the code, test / debug it and resolve all issues found during unit testing. Since you will be most iterative here, you must constantly provide intermittent high-level updates so I can know what you are doing. In addition to focusing on the code (primary objective), your secondary objective will be also to maintain documentation (technical and user).
 
-- **Skills available**: `/develop`
+- **Skills available**: `/develop`, `/explain-code`
 
 - **Artifacts involved**:
 
@@ -127,6 +127,8 @@ While the actual deployment is out of scope for you, it is crucial that you must
 ### **Maintenance**: 
 
 By this phase there will be source code, artifacts, and component specifications that should be considered __Live__. So proceed with extreme caution. The first thing that must happen before maintenance begins is creation of a new git branch. Ask me what to name the branch. From that point on, we will repeat the entire cycle of all previous phases to ensure maintenance releases are deployed with extreme vigilance and oversight.
+
+- **Skills available**: `/explain-code`
 
 ---
 
