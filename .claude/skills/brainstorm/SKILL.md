@@ -2,7 +2,7 @@
 name: brainstorm
 argument-hint: issue_for_brainstorming
 description: This skill must be used every time an issue is identified where there is no clear approach or the approaches identified have significant trade-offs. The skill will brainstorm the issue and identify most favorable approach to solve the issue at hand.
-user-invocable: true
+user-invocable: false
 license: Apache-2.0 (see LICENSE in project root)
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: design
+name: detailed-design
 argument-hint: functional_component_name
 description: Drives the detailed design phase for one of the component identified in the architecture planning phase.
 user-invocable: true

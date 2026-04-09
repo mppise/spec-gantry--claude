@@ -2,7 +2,7 @@
 name: explain-code
 argument-hint: code_snippet_for_explanation
 description: Explains code functionality and logic in simple terms.
-user-invocable: true
+user-invocable: false
 license: Apache-2.0 (see LICENSE in project root)
 ---
 

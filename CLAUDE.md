@@ -21,13 +21,15 @@ In each of the phases described below you will collaborate with me to obtain rel
 
 At the begining and end of each phase, `./STATUS.md` is updated which allows all stakeholders to track the progress of this project. You may also rely on these statuses to identify your next action. So treat this as a critical step between all major and minor checkpoints, such as, phase changes, breaks, etc.
 
-The project lifecycle consists of five phases that you will govern this project through in the order described below: 
+Beyond the phase-specific skills below, use `brainstorm` for structured options analysis and `explain-code` for standardized code reviews.
+
+The project lifecycle consists of four phases that you will govern this project through in the order described below: 
 
 ### **Ideation**: 
 
 This is the first phase for each new release where we will brainstorm the main idea. Your primary focus will be to make sure the project idea is complete in terms of requirements and feasibility before we move to the next phase.
 
-- **Skills available**: `/ideate`, `/brainstorm`
+- **Skills available**: `/ideate`
 
 - **Artifacts involved**: 
 
@@ -39,11 +41,11 @@ This is the first phase for each new release where we will brainstorm the main i
 
 In this phase we will define the project architecture across various layers. All assumptions, decisions, and risks will be documented in respective artifacts. I will also be making changes so keep track of that as well.
 
-- **Skills available**: `/plan`, `/brainstorm`
+- **Skills available**: `/plan`
 
 - **Artifacts involved**: 
 
-  - `./SPECS/artifacts/A_Architecture.md`: 
+  - `./SPECS/artifacts/B_Architecture.md`: 
     - __Owner__: You, __Reviewer__: Me. 
     - __Agreement__: You will interview me to cover all aspects of architecture and update the artifact. For maintenance releases, it might be good idea to mark changes with an identifiable tag, like `[ <!-- change identifier # --> ]`. This should allow subsequent phases to quickly understand what is changing.
 
@@ -55,7 +57,7 @@ In this phase we will define the project architecture across various layers. All
 
 This phase prepares detailed design specifications for individual functional components identified during the architecture planning phase. Each component must be individually reviewed and tracked.
 
-- **Skills available**: `/design`
+- **Skills available**: `/detailed-design`
 
 - **Artifacts involved**: 
 
@@ -75,7 +77,7 @@ This phase prepares detailed design specifications for individual functional com
 
 In this phase actual build occurs. You will write the code, test / debug it and resolve all issues found during unit testing. Since you will be most iterative here, you must constantly provide intermittent high-level updates so I can know what you are doing. In addition to focusing on the code (primary objective), your secondary objective will be also to maintain documentation (technical and user).
 
-- **Skills available**: `/develop`, `/explain-code`
+- **Skills available**: `/develop`
 
 - **Artifacts involved**:
 
@@ -124,12 +126,6 @@ While the actual deployment is out of scope for you, it is crucial that you must
     - __Owner__: You, __Reviewer__: You. 
     - __Agreement__: Once the deployment checks are complete, and if they are successful, Update the deployment scripts and configurations here. Use the release number that is marked as ready for deployment.
 
-### **Maintenance**: 
-
-By this phase there will be source code, artifacts, and component specifications that should be considered __Live__. So proceed with extreme caution. The first thing that must happen before maintenance begins is creation of a new git branch. Ask me what to name the branch. From that point on, we will repeat the entire cycle of all previous phases to ensure maintenance releases are deployed with extreme vigilance and oversight.
-
-- **Skills available**: `/explain-code`
-
 ---
 
 ## Application Architecture
@@ -140,7 +136,7 @@ Understand that the entire application architecture comprises of following build
 
   - Each component provides one or more **Features**. A feature indicates how the component can be used by an end-user as well as other components (like a service). Features can also be thought of as a function and therefore __some features__ within a component can only be declared for internal use within a component (like helper functions).
 
-    - Both, components and features must follow the overall application architecture principles and standards defined in `./SPECS/artifacts/artifacts/B_Architecture.md`.
+    - Both, components and features must follow the overall application architecture principles and standards defined in `./SPECS/artifacts/B_Architecture.md`.
 
 ### Agile Development 
 
