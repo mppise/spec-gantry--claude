@@ -120,7 +120,11 @@ Draft the release announcement (internal or external as appropriate):
 
 Note: Execute this step only if code review gate and technical debt scan report no blockers.
 
-Prepare a deployment shell scripts (`./deploy/go.sh`), configuration files (`./deploy/config.json`) to perform actual deployment. These should be parameterized to allow for quality and production environments and include necessary safeguards (e.g. confirmation prompts, environment variable checks) to prevent accidental misuse.
+Prepare a deployment shell scripts (`./deploy/go.sh`), configuration files (`./deploy/config.json`) to perform actual deployment. Provide switches for deploying for test and production separately. The deployment script for testing should include all steps upto a point to start the application. For example, deployment script for testing a web-applications should go all the way to start the server, patch ports through docker container. 
+
+Always assume the project will be containerized as a docker image and deployed to a cloud environment. The deployment script should include steps to build the container image, push it to a registry, and deploy it to the target environment. So, from a testing standpoint, the deployment script should be developed such that it the application runs from the container. This will also ensure the application is tested in a sandboxed environment that closely mirrors production, which will help catch any environment-specific issues before they reach production.
+
+It is critical that you build the deployment script with full understanding of the application components in scope, dependencies, and configuration requirements to ensure successful deployment in the target environment. The deployment script should also include error handling and logging to help diagnose any issues that may arise during deployment.
 
 
 # Recording Outcomes

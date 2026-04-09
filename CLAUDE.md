@@ -33,7 +33,7 @@ This is the first phase for each new release where we will brainstorm the main i
 
   - `./SPECS/artifacts/A_Project.md`: 
     - __Owner__: Me, __Reviewer__: You. 
-    - __Agreement__: You will interview me to cover all aspects of the idea and update the artifact. You may either insert comments in the format `<!-- SpecGantry (mm/dd/yyyy): notes -->` to indicate where my edits are required, or directly edit the contents yourself if the idea is clear. For maintenance releases, it might be good idea to mark changes between identifiable tags, like `[ <!-- change identifier # --> ]`. This should allow subsequent phases to quickly understand what is changing.
+    - __Agreement__: You will interview me to cover all aspects of the idea and update the artifact. For maintenance releases, it might be good idea to mark changes with an identifiable tag, like `[ <!-- change identifier # --> ]`. This should allow subsequent phases to quickly understand what is changing.
 
 ### **Planning**: 
 
@@ -45,7 +45,7 @@ In this phase we will define the project architecture across various layers. All
 
   - `./SPECS/artifacts/A_Architecture.md`: 
     - __Owner__: You, __Reviewer__: Me. 
-    - __Agreement__: You will interview me to cover all aspects of architecture and update the artifact.
+    - __Agreement__: You will interview me to cover all aspects of architecture and update the artifact. For maintenance releases, it might be good idea to mark changes with an identifiable tag, like `[ <!-- change identifier # --> ]`. This should allow subsequent phases to quickly understand what is changing.
 
   - `./SPECS/artifacts/C_Assumption.md` | `./SPECS/artifacts/D_Decisions.md` | `./SPECS/artifacts/E_Risks.md`: 
     - __Owner__: You, __Reviewer__: Me. 
