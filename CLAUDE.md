@@ -31,7 +31,7 @@ This is the first phase for each new release where we will brainstorm the main i
 
 - **Artifacts involved**: 
 
-  - `./SPECS/A_Project.md`: 
+  - `./SPECS/artifacts/A_Project.md`: 
     - __Owner__: Me, __Reviewer__: You. 
     - __Agreement__: You can insert comments in the format `<!-- SpecGantry (mm/dd/yyyy): notes -->` to indicate where edits are required, but you will NOT directly edit the contents. For maintenance releases, it might be good idea to mark changes between identifiable tags, like `[ <!-- latest change identifier from project artifact --> ]`. This should allow subsequent phases to quickly understand what is changing.
 
@@ -43,11 +43,11 @@ In this phase we will define the project architecture across various layers. All
 
 - **Artifacts involved**: 
 
-  - `./SPECS/A_Architecture.md`: 
+  - `./SPECS/artifacts/A_Architecture.md`: 
     - __Owner__: You, __Reviewer__: Me. 
     - __Agreement__: You will interview me to cover all aspects of architecture and update the artifact.
 
-  - `./SPECS/C_Assumption.md` | `./SPECS/D_Decisions.md` | `./SPECS/E_Risks.md`: 
+  - `./SPECS/artifacts/C_Assumption.md` | `./SPECS/artifacts/D_Decisions.md` | `./SPECS/artifacts/E_Risks.md`: 
     - __Owner__: You, __Reviewer__: Me. 
       - __Agreement__: You will maintain these artifacts, monitor updates in the `Status` column that may be indicated as `[ ]` (pending review), `[X]` (approved / confirmed), and `[-]` (rejected). The moment you notice pending review items, you must IMMEDIATELY follow-up with me for obtaining my final review before moving on.
 
@@ -63,7 +63,7 @@ This phase prepares detailed design specifications for individual functional com
     - __Owner__: You, __Reviewer__: Me. 
     - __Agreement__: Create specification files within each component sub-directory as per the application components identified during the planning phase.
 
-  - `./SPECS/C_Assumption.md` | `./SPECS/D_Decisions.md` | `./SPECS/E_Risks.md`: 
+  - `./SPECS/artifacts/C_Assumption.md` | `./SPECS/artifacts/D_Decisions.md` | `./SPECS/artifacts/E_Risks.md`: 
     - __Owner__: You, __Reviewer__: Me. 
       - __Agreement__: You will maintain these artifacts, monitor updates in the `Status` column that may be indicated as `[ ]` (pending review), `[X]` (approved / confirmed), and `[-]` (rejected). You must follow-up with me for obtaining my final review before moving to the next phase.
 
@@ -108,7 +108,7 @@ While the actual deployment is out of scope for you, it is crucial that you must
     - __Owner__: Me, __Reviewer__: Me. 
     - __Agreement__: Review the component specifications that are in scope of this release. DO NOT make any updates.
 
-  - `./SPECS/C_Assumption.md` | `./SPECS/D_Decisions.md` | `./SPECS/E_Risks.md`: 
+  - `./SPECS/artifacts/C_Assumption.md` | `./SPECS/artifacts/D_Decisions.md` | `./SPECS/artifacts/E_Risks.md`: 
     - __Owner__: Me, __Reviewer__: Me. 
     - __Agreement__: Review all assumptions, decisions, and risks to make sure they are taken into account. DO NOT make any updates.
 
@@ -140,7 +140,7 @@ Understand that the entire application architecture comprises of following build
 
   - Each component provides one or more **Features**. A feature indicates how the component can be used by an end-user as well as other components (like a service). Features can also be thought of as a function and therefore __some features__ within a component can only be declared for internal use within a component (like helper functions).
 
-    - Both, components and features must follow the overall application architecture principles and standards defined in `./SPECS/artifacts/B_Architecture.md`.
+    - Both, components and features must follow the overall application architecture principles and standards defined in `./SPECS/artifacts/artifacts/B_Architecture.md`.
 
 ### Agile Development 
 
