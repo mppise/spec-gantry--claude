@@ -33,7 +33,7 @@ This is the first phase for each new release where we will brainstorm the main i
 
   - `./SPECS/artifacts/A_Project.md`: 
     - __Owner__: Me, __Reviewer__: You. 
-    - __Agreement__: You can insert comments in the format `<!-- SpecGantry (mm/dd/yyyy): notes -->` to indicate where edits are required, but you will NOT directly edit the contents. For maintenance releases, it might be good idea to mark changes between identifiable tags, like `[ <!-- latest change identifier from project artifact --> ]`. This should allow subsequent phases to quickly understand what is changing.
+    - __Agreement__: You will interview me to cover all aspects of the idea and update the artifact. You may either insert comments in the format `<!-- SpecGantry (mm/dd/yyyy): notes -->` to indicate where my edits are required, or directly edit the contents yourself if the idea is clear. For maintenance releases, it might be good idea to mark changes between identifiable tags, like `[ <!-- change identifier # --> ]`. This should allow subsequent phases to quickly understand what is changing.
 
 ### **Planning**: 
 
