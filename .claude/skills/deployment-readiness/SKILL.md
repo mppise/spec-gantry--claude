@@ -20,7 +20,7 @@ For each section, you will begin by first listing all review items that need to 
 
 # How This Skill Works
 
-This skill runs in seven sequential stages. Do not skip or reorder them. Each stage corresponds to a specific aspect of release readiness and will produce its own log file in the `./SPECS/artifacts/rel_{{ yyyy.mm.dd_hh:mm }}` directory. The stages are as follows:
+This skill runs in seven sequential stages. Do not skip or reorder them. Each stage corresponds to a specific aspect of release readiness and will produce its own log file in the `./deploy/rel_{{ yyyy.mm.dd_hh:mm }}` directory. The stages are as follows:
 
 ## 1. Components Included in Release (`components.md`)
 
