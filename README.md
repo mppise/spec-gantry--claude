@@ -243,8 +243,13 @@ Two skills are available at any phase:
    ```
 
 2. Open Claude Code in your project directory.
+   ```
+   claude
+   ```
 
-3. Start the ideation phase:
+3. Start with as simple as a `Hi` or `Help me develop ...`.
+
+   Alternativly, kick-off the ideation phase:
    ```
    /ideate
    ```
