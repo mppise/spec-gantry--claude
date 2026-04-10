@@ -11,6 +11,27 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 ---
 
+## Table of Contents
+
+- [Why SpecGantry?](#why-specgantry)
+- [The Bigger Picture: The Governed Workflow](#the-bigger-picture-the-governed-workflow)
+- [Lifecycle Phases](#lifecycle-phases)
+  - [Phase 1 — Ideation](#phase-1--ideation)
+  - [Phase 2 — Planning](#phase-2--planning)
+  - [Phase 3 — Detailed Design](#phase-3--detailed-design)
+  - [Phase 4 — Development](#phase-4--development)
+  - [Phase 5 — Deployment Readiness](#phase-5--deployment-readiness)
+  - [Maintenance](#maintenance)
+- [Cross-Phase Skills](#cross-phase-skills)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Key Rules](#key-rules)
+- [Skills Reference](#skills-reference)
+- [License](#license)
+
+---
+
 ## Why SpecGantry?
 
 Most AI coding tools jump straight to code generation. SpecGantry doesn't.
@@ -218,18 +239,18 @@ Two skills are available at any phase:
 ### Setup
 1. To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
 
-**Prerequisites**
+   **Prerequisites**
 
-- Claude Code installed and authenticated.
-- Bash/Zsh environment (Linux, macOS, or WSL).
+   - Claude Code installed and authenticated.
+   - Bash/Zsh environment (Linux, macOS, or WSL).
 
 
-**One-Step Setup**
+   **One-Step Setup**
 
-```
-cd <project root directory>
-curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
-```
+   ```
+   cd <project root directory>
+   curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
+   ```
 
 2. Open Claude Code in your project directory.
 
