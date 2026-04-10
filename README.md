@@ -83,7 +83,7 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
                        │
         ┌──────────────▼──────────────┐
         │       Detailed Design       │
-        │  /design  /brainstorm       │
+        │  /detailed-design /brainstorm│
         └──────────────┬──────────────┘
                        │
             ◈  GATE: All Specs approved
@@ -157,15 +157,15 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 **Goal:** Produce a full specification package for each functional component identified during architecture planning.
 
-**Governed Workflow:** Every component specification (A_Purpose through I_NFR) is presented as a draft. SpecGantry must explicitly request approval before marking a component as "Reviewed" or "Complete".
+**Governed Workflow:** Every component specification (`A_Core_Spec`, `B_Interfaces`, `C_Specialized_Specs`) is presented as a draft. SpecGantry must explicitly request approval before marking a component as "Reviewed" or "Complete".
 
 **What happens:**
-1. For each component, SpecGantry runs `/design <ComponentName>` to produce **9 specification documents** under `./SPECS/components/<ComponentName>/`.
+1. For each component, SpecGantry runs `/detailed-design <ComponentName>` to produce **up to 3 specification documents** under `./SPECS/components/<ComponentName>/`.
 2. Any new assumptions, decisions, or risks are immediately logged. Open items `[ ]` block progress.
 3. `STATUS.md` Component Status Tracker is updated after each component review.
 4. Only once **all components are approved** does SpecGantry signal readiness for Development.
 
-**Skills:** `/design <ComponentName>`, `/brainstorm`  
+**Skills:** `/detailed-design <ComponentName>`, `/brainstorm`  
 **Primary artifacts:** `./SPECS/components/<ComponentName>/`
 
 ---
@@ -177,14 +177,14 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 **Governed Workflow:** A feature is only considered "Complete" when verification evidence (test logs, output, or a demo) is presented and acknowledged.
 
 **What happens:**
-1. SpecGantry reads all component specifications and implements features in the order defined in `A_Purpose.md`.
-2. As each feature is completed, it is marked `[X]` in `A_Purpose.md` accompanied by an "Implementation Note" and evidence.
+1. SpecGantry reads all component specifications and implements features in the order defined in `A_Core_Spec.md`.
+2. As each feature is completed, its Status is updated in `A_Core_Spec.md`. For trivial changes, an Implementation Note is added directly to the spec.
 3. For each feature, the `documentation` skill generates an HTML user documentation page (Bootstrap-styled) which must be reviewed and marked "Approved".
 4. New assumptions, decisions, or risks are logged immediately.
 5. `STATUS.md` Component Status Tracker is updated when the component is fully complete.
 
 **Skills:** `/develop <ComponentName>`, `/explain-code`  
-**Primary artifacts:** `./src/`, `./SPECS/components/<ComponentName>/A_Purpose.md`
+**Primary artifacts:** `./src/`, `./SPECS/components/<ComponentName>/A_Core_Spec.md`
 
 ---
 
@@ -203,10 +203,10 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 6. **Rollback Plan** (`rollback-plan.md`)
 7. **Release Communication** (`communication.md`)
 
-All files land in `./deploy/rel_YYYY.MM.DD_HH:MM/`. If all checks pass, `STATUS.md` Version History is updated and the release is marked ready for deployment.
+All files land in `./deploy/rel_yyyy.mm.dd.hhmm/`. If all checks pass, `STATUS.md` Version History is updated and the release is marked ready for deployment.
 
 **Skills:** `/deployment-readiness`  
-**Primary artifacts:** `./deploy/rel_YYYY.MM.DD_HH:MM/`
+**Primary artifacts:** `./deploy/rel_yyyy.mm.dd.hhmm/`
 
 ---
 
@@ -270,12 +270,12 @@ Two skills are available at any phase:
 | :--- | :--- | :--: | :-- |
 | `/ideate` | Ideation | Yes | Drives raw idea -> complete, feasibility-validated `A_Project.md` |
 | `/plan` | Planning | Yes | Drives `A_Project.md` -> complete `B_Architecture.md` with all technical decisions |
-| `/design <component>` | Detailed Design | Yes | Produces 9-document specification package for one component |
+| `/detailed-design <component>` | Detailed Design | Yes | Produces up to 3 specification documents for one component |
 | `/develop <component>` | Development | Yes | Implements all features for one component with code + user docs |
 | `/deployment-readiness` | Deployment Gate | Yes | Generates 7-stage release readiness package |
 | `/brainstorm <issue>` | Any phase | Yes | Structured debate-format brainstorm for unresolved trade-offs |
 | `/explain-code <snippet>` | Any phase | Yes | Plain-language explanation of a code snippet |
-| `documentation` | Development | No | Auto-invoked by `/develop` to generate HTML feature documentation |
+| `documentation` | Development | No | Called by `/develop` to generate Bootstrap-styled HTML user documentation for each implemented feature |
 
 ---
 

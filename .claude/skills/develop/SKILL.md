@@ -36,8 +36,11 @@ This skill runs in four sequential stages. Do not skip or reorder them.
 
 - **User Documentation** — for each feature implemented, ensure that user documentation is created using the `documentation` skill. This documentation should be clear and concise, providing end-users with the information they need to effectively use the feature. Create references to the user documentation in code comments where appropriate to link the implementation with the documentation.
 
+- **Status Update** — update the status of each of the listed Features in `./SPECS/components/{{ functional_component_name }}/A_Core_Spec.md` to reflect the completion feature by feature.
+
 # Recording Outcomes
 
 The source code itself will be created in `/src` directory, but no files should be created or modified outside of that during this phase.
 
 Code must follow the scaffolding and formatting style as specified in `./CLAUDE.md` to ensure maintainability. All code should be traceable back to the specifications and architecture. Any new assumptions, risks, or unresolved items surfaced during development must be logged in the appropriate artifact in the `./SPECS/artifacts` directory.
+
