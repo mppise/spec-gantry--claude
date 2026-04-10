@@ -11,6 +11,14 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 ---
 
+## Installation
+
+```
+curl -sSL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
+```
+
+---
+
 ## Why SpecGantry?
 
 Most AI coding tools jump straight to code generation. SpecGantry doesn't.
