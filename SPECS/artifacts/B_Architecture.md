@@ -51,7 +51,7 @@ description: Describe the technical architecture details for this project.
 | Layer | Technologies | Notes | Scaffolding |
 | :-- | :-- | :-- | : -- |
 | Data | <!-- recommend choices --> | <!-- ratioanle --> | `./src/db` |
-| Middleware (APIs) | ExpressJS | Standard framework for application routing as well as exosing REST APIs | `./src/api` |
+| Middleware (APIs) | <!-- recommend choices --> | Standard framework for application routing as well as exosing REST APIs | `./src/api` |
 | AI | <!-- recommended choices --> | AI modules or purpose-built frameworks along with all prompt templates | `./src/ai` |
 | Configuration | JSON files | Central configuration file to manage software behaviour | `./src/config` |
 | Security (App. Credentials) | <!-- recommend choices --> | <!-- ratioanle --> | `./src/credentials` |
