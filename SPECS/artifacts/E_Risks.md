@@ -5,5 +5,5 @@ description: List of all risks called out by SpecGantry that I must review and a
 
 # Risks
 
-| Status | ID | Risk | Notes (optional) |
+| **Status** | **ID** | **Risk** | **Notes (optional)** |
 | :-: | :-- | :--- | :--- |

@@ -30,7 +30,7 @@ This skill operates in three main stages. Do not skip or reorder them.
 
   - The draft should include sections such as an overview of the feature, step-by-step instructions for using it, and any important notes or warnings.
 
-  - In order to ensure docuentation is reviewed and approved by me, insert following tag at the top of the documentation:
+  - In order to ensure documentation is reviewed and approved by me, insert following tag at the top of the documentation:
 
     ```
     <div style="display:none">
@@ -47,7 +47,6 @@ This skill operates in three main stages. Do not skip or reorder them.
     ```
 
 - **Review and Refine** — review the draft documentation for accuracy, clarity, and completeness. Make any necessary revisions to improve the quality of the documentation. This may involve adding examples, clarifying instructions, or reorganizing content for better flow.
-
 
 # Recording Outcomes
 

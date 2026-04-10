@@ -5,5 +5,5 @@ description: List of all decisions made by SpecGantry that I must review and app
 
 # Decisions
 
-| Status | ID | Decision | Notes (optional) |
+| **Status** | **ID** | **Decision** | **Notes (optional)** |
 | :-: | :-- | :--- | :--- |

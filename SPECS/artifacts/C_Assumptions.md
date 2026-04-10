@@ -5,5 +5,5 @@ description: List of all assumptions made by SpecGantry that I must review and a
 
 # Assumptions
 
-| Status | ID | Assumption | Notes (optional) |
+| **Status** | **ID** | **Assumption** | **Notes (optional)** |
 | :-: | :-- | :--- | :--- |

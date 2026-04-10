@@ -1,6 +1,6 @@
 ---
 name: deployment-readiness
-description: Produces a complete release readiness package including changelog, code review gate, technical debt scan, smoke tests, rollback plan, and communication draft — gating entry into the Deployment phase.
+description: Produces a consolidated release readiness audit and a self-contained deployment engine (go.sh) to gate entry into the Deployment phase.
 user-invocable: true
 license: Apache-2.0 (see LICENSE in project root)
 ---
@@ -9,128 +9,50 @@ license: Apache-2.0 (see LICENSE in project root)
 
 The objective of this skill is to produce a complete release preparation package — everything needed to ship confidently and recover quickly if something goes wrong. 
 
-This skill __does not__ perform the actual release, but merely produces the release readiness log that I can review to kick-off a release confidently.
+This skill __does not__ perform the actual release, but merely produces the release readiness log and deployment scripts that the User can review to kick-off a release confidently.
 
-Checking readiness to deploy after development phase using this skill is NECESSARY before moving on to the actual deployment phase. 
-
-Follow the sections below to generate the release package with individual release readiness log files that cover changelog, code review gate, technical debt scan, pre-release checklist, smoke test plan, migration notes, rollback plan, and communication draft. Each section will generate its individual review item indicated by [X] if review passed or [ ] if review failed. 
-
-For each section, you will begin by first listing all review items that need to be checked off. Then, you will actually conduct the review and check-off (or not) each item. If any item cannot be checked off, provide a clear explanation of what is missing or needs to be addressed before it can be checked off.
-
+Checking readiness to deploy after development phase using this skill is NECESSARY before moving on to the actual deployment phase.
 
 # How This Skill Works
 
-This skill runs in seven sequential stages. Do not skip or reorder them. Each stage corresponds to a specific aspect of release readiness and will produce its own log file in the `./deploy/rel_{{ yyyy.mm.dd_hh:mm }}` directory. The stages are as follows:
+This skill runs in three sequential stages. Each stage ensures that the release is technically sound and the deployment mechanism is robust. The outcomes are recorded in the `./deploy/rel_{{ yyyy.mm.dd_hh:mm }}` directory.
 
-## 1. Components Included in Release (`components.md`)
+## 1. Release Audit (`release_audit.md`)
+Produce a single, comprehensive audit document that serves as the "Gate" for deployment. The header will contain the overall PASS / FAIL verdict. This document must cover:
 
-List all components that are included in this release. This should be a comprehensive list of all the components that have changes in this release, including both new features and bug fixes. For each component, provide a brief description of the changes that are included in this release. This will help ensure that all stakeholders have a clear understanding of what is being released and can review the changes accordingly.
+### A. Scope & Changes
+- **Components & Changelog**: A table of components included in the release, their status (New/Updated), and a concise list of features/fixes. Use `./STATUS.md` as a reference.
 
-Use a table format for clarity, with columns for Component Name, Included in Release (Yes/No), and Description of Changes.
+### B. Technical Audit (Code Review & Tech Debt)
+Perform a zero-trust audit of the source code and specs. Identify blockers categorized by severity (SEV-1, SEV-2, SEV-3). 
+- **Categories**: Syntax, Architecture, Security, Maintainability, Test Coverage, and Dependencies.
+- **Format**: `* [{{ 'X' if passed, ' ' if failed }}] **[Category/Component]** Impact description`
 
-Note: It is possible that initially, not all functional components are included in this release. So you must also provide a list of components that are NOT included in this release but are planned for future releases. This will help set expectations and provide visibility into the roadmap for future development. `./STATUS.md` may be used as a reference to determine which components are included in this release and which are not, but the final list should be based on the actual changes that are being released, not just the status tracker. Ensure that the list is accurate and reflects the current state of the project.
+### C. Risk & Recovery
+- **Smoke Test Plan**: Top 3–5 critical user flows and system-level health checks to verify after deployment.
+- **Rollback Plan**: Trigger mechanism, database reversibility, and estimated time to recover.
 
-## 2. Changelog (`changelog.md`)
+**Note**: If any SEV-1 or SEV-2 blockers are identified in the Technical Audit, the process stops here, and the release is marked as FAIL.
 
-Summarize all changes since the last release, organized by type:
+## 2. Communication (`release_announcement.md`)
+- **Release Announcement**: Draft internal/external announcement covering changes, required actions, and known limitations.
 
-- **Features** — new capabilities shipped to users
+## 3. Deployment Engine (`go.sh`)
+Create a self-contained deployment shell script (`./deploy/go.sh`) that removes the need for external config files. The script must include:
 
-- **Fixes** — bugs resolved
+- **Environment Readiness Checks**: Before deploying, the script must verify the environment (e.g., Docker daemon running, registry authentication, required CLI tools installed, network connectivity).
+- **Multi-Environment Support**: Use flags (e.g., `--env test` or `--env prod`) to switch target environments.
+- **Containerized Workflow**: Implementation must follow the build -> push -> deploy pattern for Docker images in a cloud environment.
+- **Testing Mode**: For `--env test`, the script should proceed until the application is running and accessible (e.g., patching ports), allowing for immediate verification.
+- **Robustness**: Include comprehensive error handling and logging for every step.
 
-Format each entry as: `[component/area] Short description of change`
-
-## 3. Code Review Gate (`code-review.md`)
-
-Review the code for syntax, architecture alignment, security concerns, maintainability issues, and best practices. Also validate if new code introduces side-effects or issues for other components. Identify any issues that should block the release, categorizing them by severity. Group by severity (i.e. SEV-1, SEV-2, SEV-3, where SEV-1 is highest). Use following format for each item:
-
-```
-* [{{ 'X' if review passed, ' ' if review failed }}] **[component/area]** Summarize the impact
-```
-
-## 4. Technical Debt Scan (`tech-debt.md`)
-
-Review the code for following technical debt categories introduced in this release:
-
-- **Code Quality** — duplicated logic, overly complex functions, poor naming, dead code
-
-- **Test Coverage** — missing unit tests, untested edge cases, flaky tests, no integration tests
-
-- **Architecture** — tight coupling, layer violations, missing abstractions, wrong pattern for the use case
-
-- **Documentation** — undocumented APIs, stale comments, missing ADRs (Architecture Decision Records)
-
-- **Dependencies** — outdated packages, transitive vulnerabilities, pinned-but-forgotten versions
-
-- **Operational** — missing logging, no health checks, manual deployment steps, no rollback procedure
-
-- **Security** — hardcoded secrets, overly broad permissions, unvalidated inputs at boundaries
-
-Group by severity (i.e. SEV-1, SEV-2, SEV-3, where SEV-1 is highest). Use following format for each item:
-
-```
-* [{{ 'X' if review passed, ' ' if review failed }}] **[category]** Summarize the impact
-```
-
-## 5. Smoke Test Plan (`smoke-tests.md`)
-
-Note: Execute this step only if code review gate and technical debt scan report no blockers.
-
-Define the minimum set of manual or automated checks to run immediately after deploy to confirm the release is healthy:
-
-- What are the top 3–5 user-critical flows to verify?
-- What system-level checks confirm the deployment succeeded (health endpoints, queue depths, error rates)?
-- What is the acceptable time window to observe before declaring the release stable?
-
-Group by category (i.e. USER-FLOW, SYSTEM-CHECK, etc.). Use following format for each item:
-
-```
-### [ ] **{{ scenario }}** 
-
-[component/area] Test plan description
-```
-
-## 6. Rollback Plan (`rollback-plan.md`)
-
-Note: Execute this step only if code review gate and technical debt scan report no blockers.
-
-Define how to revert if the release needs to be pulled:
-
-- How is a rollback triggered? (feature flag, redeploy previous tag, etc.)
-
-- Are database migrations reversible? If not, what is the safe state?
-
-- What is the estimated time to rollback?
-
-- Who needs to be notified and how?
-
-## 7. Communication (`communication.md`)
-
-Note: Execute this step only if code review gate and technical debt scan report no blockers.
-
-Draft the release announcement (internal or external as appropriate):
-
-- What changed that users/stakeholders care about
-
-- Any action required on their part
-
-- Known issues or limitations in this release
-
-## 8. Deployment Scripts and Configurations
-
-Note: Execute this step only if code review gate and technical debt scan report no blockers.
-
-Prepare a deployment shell scripts (`./deploy/go.sh`), configuration files (`./deploy/config.json`) to perform actual deployment. Provide switches for deploying for test and production separately. The deployment script for testing should include all steps upto a point to start the application. For example, deployment script for testing a web-applications should go all the way to start the server, patch ports through docker container. 
-
-Always assume the project will be containerized as a docker image and deployed to a cloud environment. The deployment script should include steps to build the container image, push it to a registry, and deploy it to the target environment. So, from a testing standpoint, the deployment script should be developed such that it the application runs from the container. This will also ensure the application is tested in a sandboxed environment that closely mirrors production, which will help catch any environment-specific issues before they reach production.
-
-It is critical that you build the deployment script with full understanding of the application components in scope, dependencies, and configuration requirements to ensure successful deployment in the target environment. The deployment script should also include error handling and logging to help diagnose any issues that may arise during deployment.
-
+## 4. Project Governance Update
+Once the audit is passed and the script is ready:
+- Update the "Project Status Tracker" in `./STATUS.md` to mark the Deployment phase as complete.
+- Add an entry to "Version History" in `./STATUS.md` marking the new version as `[X] Active` (Ready to Deploy).
 
 # Recording Outcomes
 
-Only the release readiness log files stated in each section will be created in the `./deploy/rel_{{ yyyy.mm.dd_hh:mm }}` directory. No other artifacts must be updated during this phase.
+Only the `release_audit.md` and `go.sh` files will be created/updated in the `./deploy/rel_{{ yyyy.mm.dd_hh:mm }}` directory (or the base `./deploy/` for the script). 
 
-Only if a fresh deployment readiness is requested, ignore any previous runs and start with a clean `./deploy/rel_{{ yyyy.mm.dd_hh:mm }}` directory otherwise assume the latest run is being used to determine the change in status of the blockers.
-
-Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Deployment phase as complete, and notify me that the project is ready to enter the **Deployment** phase. At this point, also add an entry to the "Version History" in `./STATUS.md` marking the new version as `[X]` Active — it has cleared deployment readiness and is ready to deploy.
+If a fresh deployment readiness is requested, start with a clean timestamped directory. Otherwise, use the latest run to determine the status of blockers.

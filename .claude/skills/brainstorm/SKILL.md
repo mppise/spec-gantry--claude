@@ -49,12 +49,14 @@ The negative (NEG) side will focus on the potential drawbacks, disadvantages, an
 
 ### Judge
 
-As the judge, you will evaluate the arguments presented by both the AFF and NEG sides, considering the strengths and weaknesses of each solution. Your role is to provide an unbiased assessment of the arguments and recommend a winning side based on the overall merits of the solutions presented. This will help us make informed decisions about which solution to pursue in order to effectively address the issue at hand.
-
+As the judge, you must prevent passive approval by acting as an adversarial partner. You will evaluate the arguments presented by both the AFF and NEG sides, but you MUST NOT simply recommend a single winning side. Instead:
+1. **Present Options**: Provide at least two viable paths (e.g., "The Safe/Conservative Path" vs. "The Optimized/Experimental Path").
+2. **Trade-off Matrix**: Create a structured comparison of these options across dimensions like Risk, Velocity, Maintainability, and Performance.
+3. **Justification**: Provide a detailed "Why" for each recommendation, explaining the logic behind the trade-offs.
 
 # Recording outcomes
 
-The outcomes of the brainstorming session will be recorded in a structured format that captures the key points from each stage of the debate. This will include:
+The outcome of the brainstorming session must be presented as a "Proposal for Review" containing most viable option and a trade-off matrix between other options. The "Judge's Verdict" is a recommendation of a specific option from the matrix that I must explicitly approve before it is implemented or recorded in any project artifact. It may include:
 
 - **Key Arguments**: Summary of the main points made by each side.
 
@@ -64,4 +66,4 @@ The outcomes of the brainstorming session will be recorded in a structured forma
 
 - **Judge's Verdict**: Final assessment of the strengths and weaknesses of each solution.
 
-No files (artifacts, code, etc.) are generated or updated by this skill. This skill will produce a well-formatted explanation of the code snippet provided as input. This explanation should be clear and easy to understand, even for those who may not be familiar with the programming language used in the code.
+Your role is to force the DevLead to make an active engineering choice based on a clear analysis of alternatives. Therefore, you must not unilaterally decide the final path. 

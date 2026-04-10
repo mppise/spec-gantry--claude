@@ -27,14 +27,16 @@ It treats Claude Code not as an autocomplete engine, but as a **collaborative en
 
 ---
 
-## The Bigger Picture
+## The Bigger Picture: The Governed Workflow
 
-SpecGantry organizes the collaboration between a **DevLead** (you) and **SpecGantry** (Claude Code) across five ordered phases. Each phase has:
+SpecGantry organizes the collaboration between a **DevLead** (you) and **SpecGantry** (Claude Code) across five ordered phases. This is not just a sequence of steps, but a **Governed Workflow** based on a **Draft -> Review -> Finalize** loop.
 
-- A defined **objective** — what must be true before the phase is done.
-- **Artifacts** — specific files that are created, updated, or reviewed in that phase.
-- **Skills** — slash commands that drive Claude Code's behavior within that phase.
-- A **gate** — an explicit handoff point that requires DevLead review and approval before the next phase begins.
+Each phase consists of:
+- **A defined objective** — what must be true before the phase is done.
+- **Artifacts** — specific files that are created, updated, or reviewed.
+- **Skills** — slash commands that drive Claude Code's behavior.
+- **Governance Triggers** — explicit rules (defined in `CLAUDE.md`) that prevent the AI from unilaterally marking tasks as "Complete" without DevLead approval.
+- **A gate** — an explicit handoff point that requires DevLead review and approval before the next phase begins.
 
 The project's ground truth lives in the `./SPECS/` directory. Source code lives in `./src/`. Deployment artifacts live in `./deploy/`. The `./STATUS.md` file is the single pane of glass for project health at any moment.
 
@@ -48,40 +50,40 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
         │  /ideate  /brainstorm       │
         └──────────────┬──────────────┘
                        │
-            ◈  GATE: A_Project.md complete
-               + feasibility validated
+            ◈  GATE: A_Project.md approved
+               (Draft -> Review -> Finalize)
                        │
         ┌──────────────▼──────────────┐
         │          Planning           │
         │  /plan  /brainstorm         │
         └──────────────┬──────────────┘
                        │
-            ◈  GATE: B_Architecture.md complete
-               + all decisions/assumptions/risks resolved
+            ◈  GATE: B_Architecture.md approved
+               (Draft -> Review -> Finalize)
                        │
         ┌──────────────▼──────────────┐
         │       Detailed Design       │
         │  /design  /brainstorm       │
         └──────────────┬──────────────┘
                        │
-            ◈  GATE: all component specs complete
-               + no open review items
+            ◈  GATE: All Specs approved
+               (Draft -> Review -> Finalize)
                        │
         ┌──────────────▼──────────────┐
         │         Development         │
         │  /develop  /explain-code    │
         └──────────────┬──────────────┘
                        │
-            ◈  GATE: all features built and marked [X]
-               + user docs generated
+            ◈  GATE: All Features verified
+               (Evidence -> Review -> Finalize)
                        │
         ┌──────────────▼──────────────┐
         │     Deployment Readiness    │
         │  /deployment-readiness      │
         └──────────────┬──────────────┘
                        │
-            ◈  GATE: no SEV-1/SEV-2 blockers
-               + release package complete
+            ◈  GATE: No SEV-1/2 Blockers
+               (Silent Audit -> Final Summary)
                        │
         ┌──────────────▼──────────────┐
         │          Deploy             │
@@ -100,11 +102,13 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 **Goal:** Convert a raw project idea into a complete, feasibility-validated `A_Project.md` that can support the planning phase.
 
+**Governed Workflow:** SpecGantry presents summaries of findings as drafts. The phase is only complete when the DevLead confirms the project idea is final.
+
 **What happens:**
 1. DevLead shares a project idea (however rough).
-2. SpecGantry assesses `A_Project.md` for gaps, then asks targeted questions to fill each section: project name, problem statement, solution approach, target user, core features, success criteria, and out-of-scope items.
-3. SpecGantry stress-tests the completed document across four dimensions: **requirement completeness**, **feasibility**, **clarity**, and **consistency**. Follow-up questions are asked until every dimension is resolved.
-4. `STATUS.md` is updated to mark Ideation complete.
+2. SpecGantry assesses `A_Project.md` for gaps, then asks targeted questions to fill each section.
+3. SpecGantry stress-tests the completed document across: **requirement completeness**, **feasibility**, **clarity**, and **consistency**.
+4. `STATUS.md` is updated only after DevLead's final confirmation.
 
 **Skills:** `/ideate`, `/brainstorm`  
 **Primary artifact:** `./SPECS/artifacts/A_Project.md`
@@ -115,12 +119,14 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 **Goal:** Translate the validated project idea into a complete technical architecture documented in `B_Architecture.md`, with all open decisions, assumptions, and risks logged.
 
+**Governed Workflow:** All architecture updates and artifacts (`C_Assumption`, `D_Decisions`, `E_Risks`) are presented as "Proposals for Review." 
+
 **What happens:**
-1. SpecGantry reads `A_Project.md` as the source of truth (never modified in this phase).
-2. SpecGantry interviews DevLead across **15 architecture topics**, one at a time: Tech Stack, Components/Modules, Data, APIs/Interfaces, AI Integration (including MCP server design), User Experience (mobile-first, cloud-first, AI-first), Observability & Analytics, Security, Compliance & Privacy, Third-party Integrations, Scalability, Error Handling & Resilience, Notifications & Messaging, Deployment, and Testing Strategy.
-3. Any assumption, decision, or risk surfaces immediately into `C_Assumptions.md`, `D_Decisions.md`, or `E_Risks.md`. Items marked `[ ]` (pending review) block forward progress.
+1. SpecGantry reads `A_Project.md` as the source of truth.
+2. SpecGantry interviews DevLead across **15 architecture topics**, one at a time.
+3. Any assumption, decision, or risk is logged. Items marked `[ ]` (pending review) are hard blockers.
 4. Architecture is stress-tested across: **consistency**, **completeness**, **risk**, and **simplicity**.
-5. `STATUS.md` is updated to mark Planning complete.
+5. `STATUS.md` is updated only after the DevLead explicitly types "Approved" or "Confirmed".
 
 **Skills:** `/plan`, `/brainstorm`  
 **Primary artifact:** `./SPECS/artifacts/B_Architecture.md`
@@ -131,24 +137,13 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 **Goal:** Produce a full specification package for each functional component identified during architecture planning.
 
+**Governed Workflow:** Every component specification (A_Purpose through I_NFR) is presented as a draft. SpecGantry must explicitly request approval before marking a component as "Reviewed" or "Complete".
+
 **What happens:**
-1. For each component, SpecGantry runs `/design <ComponentName>` to produce **9 specification documents** under `./SPECS/components/<ComponentName>/`:
-
-   | File | Contents |
-   | :-- | :-- |
-   | `A_Purpose.md` | Feature table with must-have/nice-to-have priority and build status |
-   | `B_Dependencies.md` | Internal and external dependencies |
-   | `C_Data.md` | Data elements consumed, produced, and transformed |
-   | `D_ExecutionMode.md` | Online vs. background process behavior |
-   | `E_ExternalServices.md` | External APIs and interfaces consumed |
-   | `F_ExposedServices.md` | Services and APIs this component exposes |
-   | `G_AICapabilities.md` | AI capabilities, models, and prompt strategy |
-   | `H_Events.md` | Events consumed and produced |
-   | `I_NFR.md` | Performance, security, accessibility, and other non-functional requirements |
-
-2. Any new assumptions, decisions, or risks surfaced during design are immediately logged. Open items block progress until reviewed.
-3. `STATUS.md` Component Status Tracker is updated after each component.
-4. Only once **all components are designed** does SpecGantry signal readiness for Development.
+1. For each component, SpecGantry runs `/design <ComponentName>` to produce **9 specification documents** under `./SPECS/components/<ComponentName>/`.
+2. Any new assumptions, decisions, or risks are immediately logged. Open items `[ ]` block progress.
+3. `STATUS.md` Component Status Tracker is updated after each component review.
+4. Only once **all components are approved** does SpecGantry signal readiness for Development.
 
 **Skills:** `/design <ComponentName>`, `/brainstorm`  
 **Primary artifacts:** `./SPECS/components/<ComponentName>/`
@@ -159,13 +154,14 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 **Goal:** Implement all features for a given component, keeping code traceable to specs, well-documented, and paired with user-facing documentation.
 
+**Governed Workflow:** A feature is only considered "Complete" when verification evidence (test logs, output, or a demo) is presented and acknowledged.
+
 **What happens:**
 1. SpecGantry reads all component specifications and implements features in the order defined in `A_Purpose.md`.
-2. As each feature is completed, its row in `A_Purpose.md` is marked `[X]`.
-3. For each feature, the `documentation` skill generates an HTML user documentation page (Bootstrap-styled) stored in the UX docs directory.
-4. New assumptions, decisions, or risks discovered during coding are logged immediately. If an impacting design gap is found, development **stops** until DevLead resolves it.
-5. `STATUS.md` Component Status Tracker is updated when the component is fully complete (all features done).
-6. When all components are complete, the Development phase is marked complete — but deployment requires the Deployment Readiness phase to pass first.
+2. As each feature is completed, it is marked `[X]` in `A_Purpose.md` accompanied by an "Implementation Note" and evidence.
+3. For each feature, the `documentation` skill generates an HTML user documentation page (Bootstrap-styled) which must be reviewed and marked "Approved".
+4. New assumptions, decisions, or risks are logged immediately.
+5. `STATUS.md` Component Status Tracker is updated when the component is fully complete.
 
 **Skills:** `/develop <ComponentName>`, `/explain-code`  
 **Primary artifacts:** `./src/`, `./SPECS/components/<ComponentName>/A_Purpose.md`
@@ -176,17 +172,18 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 **Goal:** Produce a complete release readiness package and gate entry into actual deployment.
 
+**Governed Workflow:** **Audit Mode**. SpecGantry is strictly prohibited from asking for inputs or making "fixes". Findings are documented as "PASS/FAIL" based on evidence.
+
 **What happens (7 sequential stages, none skippable):**
+1. **Components Included** (`components.md`)
+2. **Changelog** (`changelog.md`)
+3. **Code Review Gate** (`code-review.md`) — SEV-1/2/3 categorization.
+4. **Technical Debt Scan** (`tech-debt.md`) — 7 debt categories; SEV-1/2/3 categorization.
+5. **Smoke Test Plan** (`smoke-tests.md`)
+6. **Rollback Plan** (`rollback-plan.md`)
+7. **Release Communication** (`communication.md`)
 
-1. **Components Included** (`components.md`) — table of what is in scope for this release vs. deferred.
-2. **Changelog** (`changelog.md`) — all changes organized by Features and Fixes.
-3. **Code Review Gate** (`code-review.md`) — syntax, architecture alignment, security, maintainability, cross-component side-effects; issues categorized SEV-1/2/3.
-4. **Technical Debt Scan** (`tech-debt.md`) — 7 debt categories: Code Quality, Test Coverage, Architecture, Documentation, Dependencies, Operational, Security; issues categorized SEV-1/2/3.
-5. **Smoke Test Plan** (`smoke-tests.md`) — top user-critical flows and system health checks to run immediately after deploy. *(Skipped if blockers in stages 3–4.)*
-6. **Rollback Plan** (`rollback-plan.md`) — rollback trigger, migration reversibility, time-to-rollback, notification chain. *(Skipped if blockers in stages 3–4.)*
-7. **Release Communication** (`communication.md`) — stakeholder-ready release announcement. *(Skipped if blockers in stages 3–4.)*
-
-All files land in `./deploy/rel_YYYY.MM.DD_HH:MM/`. If all checks pass, `STATUS.md` Version History is updated with the new release version marked `[X]` Active and ready to deploy.
+All files land in `./deploy/rel_YYYY.MM.DD_HH:MM/`. If all checks pass, `STATUS.md` Version History is updated and the release is marked ready for deployment.
 
 **Skills:** `/deployment-readiness`  
 **Primary artifacts:** `./deploy/rel_YYYY.MM.DD_HH:MM/`
@@ -195,7 +192,7 @@ All files land in `./deploy/rel_YYYY.MM.DD_HH:MM/`. If all checks pass, `STATUS.
 
 ### Maintenance
 
-When a live release needs changes, SpecGantry enters Maintenance mode on a **new git branch** (name chosen by DevLead). The full five-phase cycle repeats on that branch with the same governance rigor. Live artifacts are treated as read-only until the new cycle formally changes them.
+When a live release needs changes, SpecGantry enters Maintenance mode on a **new git branch**. The full five-phase cycle repeats on that branch with the same governance rigor. Live artifacts are treated as read-only until the new cycle formally changes them.
 
 **Skills:** `/explain-code`
 
@@ -205,22 +202,20 @@ When a live release needs changes, SpecGantry enters Maintenance mode on a **new
 
 Two skills are available at any phase:
 
-| Skill | When to use |
-| :-- | :-- |
-| `/brainstorm <issue>` | Any time a decision has no clear answer or involves significant trade-offs. Uses a structured Lincoln-Douglas debate format with Affirmative, Negative, and Judge personas to surface all angles before committing to an approach. |
-| `/explain-code <snippet>` | Any time you need a plain-language explanation of a piece of code — useful during code review, onboarding, or design verification. |
+| Skill | When to use | Governance |
+| :--- | :--- | :--- |
+| `/brainstorm <issue>` | Any time a decision has no clear answer or involves significant trade-offs. | The "Judge's Verdict" is a recommendation; DevLead must explicitly approve the path before it's recorded. |
+| `/explain-code <snippet>` | Any time you need a plain-language explanation of a piece of code. | Must explicitly state how implementation aligns with `B_Architecture.md` and flag "Design Divergences". |
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
-
 - [Claude Code](https://claude.ai/code) installed and authenticated.
 - A git repository initialized at your project root.
 
 ### Setup
-
 1. Clone or copy the SpecGantry framework into your project root. The critical files are:
    - `CLAUDE.md` — the engagement contract that governs the entire collaboration.
    - `STATUS.md` — the live project tracker.
@@ -240,7 +235,6 @@ Two skills are available at any phase:
 5. Track progress at any time by reading `STATUS.md`.
 
 ### Key Rules
-
 - SpecGantry will **not** edit `A_Project.md` — that document is owned by DevLead.
 - SpecGantry will **stop and ask** whenever an assumption, decision, or risk is unresolved.
 - SpecGantry will **not** call external services or APIs without explicit permission.
@@ -252,9 +246,9 @@ Two skills are available at any phase:
 ## Skills Reference
 
 | Skill | Phase | Invocable | Description |
-| :-- | :-- | :--: | :-- |
-| `/ideate` | Ideation | Yes | Drives raw idea → complete, feasibility-validated `A_Project.md` |
-| `/plan` | Planning | Yes | Drives `A_Project.md` → complete `B_Architecture.md` with all technical decisions |
+| :--- | :--- | :--: | :-- |
+| `/ideate` | Ideation | Yes | Drives raw idea -> complete, feasibility-validated `A_Project.md` |
+| `/plan` | Planning | Yes | Drives `A_Project.md` -> complete `B_Architecture.md` with all technical decisions |
 | `/design <component>` | Detailed Design | Yes | Produces 9-document specification package for one component |
 | `/develop <component>` | Development | Yes | Implements all features for one component with code + user docs |
 | `/deployment-readiness` | Deployment Gate | Yes | Generates 7-stage release readiness package |

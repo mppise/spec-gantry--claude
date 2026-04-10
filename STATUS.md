@@ -1,24 +1,34 @@
 ---
 name: status
-description: Maintains status of the project lifecycle develoiped using SpecGantry. Status in '[ ]' will be maintained by DevLead to indicate approval or pending action.
+description: Maintains status of the project lifecycle developed using SpecGantry.
 ---
 
 # Project Status Tracker
 
-| Phase | Started on | Completed on | Notes |
+| **Phase** | **Started on** | **Completed on** | **Notes** |
 | :-- | :--: | :--: | :-- |
-| Ideation | {{ started since }} | {{ completed on, else leave empty }} | {{ relevant details about the phase in a short single statement }} |
+| Ideation | | | |
+| Planning | | | |
+| Detailed Design | | | |
+| Development | | | |
+| Deployment Readiness | | | |
+
+# Discovery Pivots
+
+| **Date** | **Component** | **Change** | **Decision Ref** |
+| :-- | :-- | :-- | :-- |
+| | | | |
+
 
 # Component Status Tracker
 
-| Component | Started on | Ready on | Completed on | Notes |
+| **Component** | **Started on** | **Ready on** | **Developed on** | **Notes** |
 | :-- | :--: | :--: | :--: | :-- |
-| {{ pre-populate separate row for individual functional components after the end of planning phase. if an already completed component goes into maintenance, update the 'Started on' and clear 'Ready on' and 'Completed on' columns so the team knows that the component is under development. }} |
+| | | | | |
+
 
 # Version History
 
-{{ record version history, and primarily show current active version }}
-
-| Version | Active | Active since | Notes |
-| :-- | :-- | :--: | :-- |
-| {{ major and minor version }} | {{ [X] if deployed, else [ ] if ready for deployment }} | {{ active since }} | {{ notes in a short single statement }} |
+| **Version** | **Ready for Deployment on** | **Notes** |
+| :-- | :-- | :--: |
+| | | |

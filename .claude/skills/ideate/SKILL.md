@@ -9,7 +9,6 @@ license: Apache-2.0 (see LICENSE in project root)
 
 The objective of this skill is to take a project idea — however raw or complete — and drive it to a state where Planning can begin with confidence. That means `./SPECS/artifacts/A_Project.md` is fully populated, feasibility has been assessed, and known unknowns are captured in the artifact system. The ideation phase is all about fleshing out the concept, identifying potential challenges, and ensuring that we have a solid foundation to build upon in the subsequent phases of the project lifecycle.
 
-
 # How This Skill Works
 
 This skill runs in four sequential stages. Do not skip or reorder them.
@@ -20,9 +19,6 @@ This skill runs in four sequential stages. Do not skip or reorder them.
 
 - **Challenge** — stress-test the content across four dimensions, viz. requirement completeness, feasibility, clarity, and consistency. For each, conduct the review yourself and ask a follow-up until the answer is specific enough to write down.
 
-
 # Recording Outcomes
 
-All other files during ideation phase are off-limits. Just focus on understanding the project idea complete.
-
-Once all stages are complete, update the "Project Status Tracker" in `./STATUS.md` to record the Ideation phase as complete, and notify me that the project is ready to enter the **Planning** phase.
+All changes during the planning phase are confined to `./SPECS/artifacts/A_Project.md` and potentially `./SPECS/artifacts/C_Assumptions.md`. No other files are to be created or modified.

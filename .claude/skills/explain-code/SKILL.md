@@ -21,12 +21,11 @@ Note the code snippet below that must be explained:
 
 This skill runs in three sequential stages. Do not skip or reorder them.
 
-- **Assess** — read the provided code snippet carefully. Identify the programming language, key constructs, and overall structure of the code.
+- **Assess** — read the provided code snippet carefully. Identify the programming language, key constructs, and overall structure of the code. Also, retrieve the relevant architecture/design specifications from the `./SPECS/` directory to provide context.
 
-- **Explain** — provide a step-by-step explanation of what the code does. Focus on the main logic, the purpose of each section, and how different parts of the code interact with each other. Use simple language and avoid technical jargon where possible.
+- **Explain** — provide a step-by-step explanation of what the code does. Focus on the main logic, the purpose of each section, and how different parts of the code interact with each other. Use simple language and avoid technical jargon where possible. Explicitly state how this implementation maps back to the design specifications.
 
 - **Summarize** — conclude with a brief summary of the code's overall functionality and its intended use case. If there are any potential edge cases or important considerations related to the code, include those in the summary as well.
-
 
 # Recording Outcomes
 
