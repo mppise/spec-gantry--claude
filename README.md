@@ -234,21 +234,11 @@ Two skills are available at any phase:
 
 ### Prerequisites
 - [Claude Code](https://claude.ai/code) installed and authenticated.
-- A git repository initialized at your project root.
+- Bash/Zsh environment (Linux, macOS, or WSL).
 
 ### Setup
 1. To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
-
-   **Prerequisites**
-
-   - Claude Code installed and authenticated.
-   - Bash/Zsh environment (Linux, macOS, or WSL).
-
-
-   **One-Step Setup**
-
    ```
-   cd <project root directory>
    curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
    ```
 
