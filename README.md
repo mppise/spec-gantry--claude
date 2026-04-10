@@ -11,25 +11,6 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 ---
 
-## Installation
-
-To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
-
-**Prerequisites**
-
-- Claude Code installed and authenticated.
-- Bash/Zsh environment (Linux, macOS, or WSL).
-
-
-**One-Step Setup**
-
-```
-cd <project root directory>
-curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
-```
-
----
-
 ## Why SpecGantry?
 
 Most AI coding tools jump straight to code generation. SpecGantry doesn't.
@@ -235,11 +216,20 @@ Two skills are available at any phase:
 - A git repository initialized at your project root.
 
 ### Setup
-1. Clone or copy the SpecGantry framework into your project root. The critical files are:
-   - `CLAUDE.md` — the engagement contract that governs the entire collaboration.
-   - `STATUS.md` — the live project tracker.
-   - `SPECS/artifacts/` — the five core artifact templates.
-   - `.claude/skills/` — the skill definitions for each lifecycle phase.
+1. To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
+
+**Prerequisites**
+
+- Claude Code installed and authenticated.
+- Bash/Zsh environment (Linux, macOS, or WSL).
+
+
+**One-Step Setup**
+
+```
+cd <project root directory>
+curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
+```
 
 2. Open Claude Code in your project directory.
 
