@@ -26,7 +26,6 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
-  - [Key Rules](#key-rules)
 - [Skills Reference](#skills-reference)
 - [License](#license)
 
@@ -247,24 +246,21 @@ Two skills are available at any phase:
    claude
    ```
 
-3. Start with as simple as a `Hi` or `Help me develop ...`.
+3. There are many ways to start a project:
 
-   Alternativly, kick-off the ideation phase:
-   ```
-   /ideate
-   ```
-   Describe your project idea. SpecGantry will guide you through completing `A_Project.md` and will not let you proceed to Planning until the idea is feasibility-validated.
+   i. Start with as simple as a `Hi` or `Help me develop ...`.
 
-4. Proceed through each phase in order, using the skills listed above. **Always ask permission before starting a new phase** — this is an explicit contract rule.
+   ii. Alternatively, kick-off the ideation phase:
+      ```
+      /ideate
+      ```
+      Describe your project idea. 
+   
+   iii. Update `./SPECS/artifacts/A_Project.md` in part or full and engage with option (i) or (ii) above.
+   
+4. SpecGantry will guide you through the lifecycle phases.
 
-5. Track progress at any time by reading `STATUS.md`.
-
-### Key Rules
-- SpecGantry will **not** edit `A_Project.md` — that document is owned by DevLead.
-- SpecGantry will **stop and ask** whenever an assumption, decision, or risk is unresolved.
-- SpecGantry will **not** call external services or APIs without explicit permission.
-- Deployment only happens after the Deployment Readiness phase produces a clean package.
-- Maintenance always starts on a **new git branch**.
+5. Track progress at any time by reading `STATUS.md` or by asking claude.
 
 ---
 
