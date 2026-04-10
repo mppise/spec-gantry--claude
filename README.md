@@ -13,8 +13,18 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 ## Installation
 
+To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
+
+### Prerequisites
+* **Claude Code** installed and authenticated.
+* **Bash/Zsh** environment (Linux, macOS, or WSL).
+
+
+### One-Step Setup
+
 ```
-curl -sSL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
+cd <project root directory>
+curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
 ```
 
 ---
