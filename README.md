@@ -275,7 +275,7 @@ Two skills are available at any phase:
 | `/deployment-readiness` | Deployment Gate | Yes | Generates 7-stage release readiness package |
 | `/brainstorm <issue>` | Any phase | Yes | Structured debate-format brainstorm for unresolved trade-offs |
 | `/explain-code <snippet>` | Any phase | Yes | Plain-language explanation of a code snippet |
-| `documentation` | Development | No | Called by `/develop` to generate Bootstrap-styled HTML user documentation for each implemented feature |
+| `/documentation` | Development | No | Called by `/develop` to generate Bootstrap-styled HTML user documentation for each implemented feature |
 
 ---
 
