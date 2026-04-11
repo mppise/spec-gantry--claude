@@ -15,6 +15,9 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 - [Why SpecGantry?](#why-specgantry)
 - [The Bigger Picture: The Governed Workflow](#the-bigger-picture-the-governed-workflow)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
 - [Lifecycle Phases](#lifecycle-phases)
   - [Phase 1 — Ideation](#phase-1--ideation)
   - [Phase 2 — Planning](#phase-2--planning)
@@ -23,9 +26,6 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
   - [Phase 5 — Deployment Readiness](#phase-5--deployment-readiness)
   - [Maintenance](#maintenance)
 - [Cross-Phase Skills](#cross-phase-skills)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
 - [Skills Reference](#skills-reference)
 - [License](#license)
 
@@ -44,6 +44,41 @@ It treats Claude Code not as an autocomplete engine, but as a **collaborative en
 - **Built-in governance** — assumptions, decisions, and risks are tracked in dedicated artifacts throughout the lifecycle. Open items block progress until resolved.
 - **Repeatable process** — the same structured workflow applies to greenfield projects, new releases, and maintenance cycles, so any stakeholder can pick up the project state at any point.
 - **Deployment confidence** — a dedicated Deployment Readiness phase produces a full release package (changelog, code review gate, tech debt scan, smoke test plan, rollback plan, and release communication) before any deployment is attempted.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- [Claude Code](https://claude.ai/code) installed and authenticated.
+- Bash/Zsh environment (Linux, macOS, or WSL).
+
+### Setup
+1. To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
+   ```
+   curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
+   ```
+
+2. Open Claude Code in your project directory.
+   ```
+   claude
+   ```
+
+3. There are many ways to start a project:
+
+   i. Start with as simple as a `Hi` or `Help me develop ...`.
+
+   ii. Alternatively, kick-off the ideation phase:
+      ```
+      /ideate
+      ```
+      Describe your project idea. 
+   
+   iii. Update `./SPECS/artifacts/A_Project.md` in part or full and engage with option (i) or (ii) above.
+   
+4. SpecGantry will guide you through the lifecycle phases.
+
+5. Track progress at any time by reading `STATUS.md` or by asking claude.
 
 ---
 
@@ -226,41 +261,6 @@ Two skills are available at any phase:
 | :--- | :--- | :--- |
 | `/brainstorm <issue>` | Any time a decision has no clear answer or involves significant trade-offs. | The "Judge's Verdict" is a recommendation; DevLead must explicitly approve the path before it's recorded. |
 | `/explain-code <snippet>` | Any time you need a plain-language explanation of a piece of code. | Must explicitly state how implementation aligns with `B_Architecture.md` and flag "Design Divergences". |
-
----
-
-## Getting Started
-
-### Prerequisites
-- [Claude Code](https://claude.ai/code) installed and authenticated.
-- Bash/Zsh environment (Linux, macOS, or WSL).
-
-### Setup
-1. To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
-   ```
-   curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
-   ```
-
-2. Open Claude Code in your project directory.
-   ```
-   claude
-   ```
-
-3. There are many ways to start a project:
-
-   i. Start with as simple as a `Hi` or `Help me develop ...`.
-
-   ii. Alternatively, kick-off the ideation phase:
-      ```
-      /ideate
-      ```
-      Describe your project idea. 
-   
-   iii. Update `./SPECS/artifacts/A_Project.md` in part or full and engage with option (i) or (ii) above.
-   
-4. SpecGantry will guide you through the lifecycle phases.
-
-5. Track progress at any time by reading `STATUS.md` or by asking claude.
 
 ---
 
