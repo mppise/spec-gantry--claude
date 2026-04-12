@@ -2,7 +2,9 @@
 
 SpecGantry is a project lifecycle governance framework built on top of [Claude Code](https://claude.ai/code). It brings the discipline of spec-driven development to AI-assisted software engineering — ensuring that every line of code is traceable to a design, every design is traceable to architecture, and every architecture decision is grounded in a validated project idea.
 
+
 ---
+
 
 # Getting Started
 
@@ -11,7 +13,7 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 - Bash/Zsh environment (Linux, macOS, or WSL).
 
 ## Setup
-1. To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
+1. To integrate Spec-Gantry into your project, run the following command in your **project's root directory**. This will download the latest version of the framework and configure the necessary permissions automatically.
    ```
    curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
    ```
@@ -23,7 +25,7 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 3. There are many ways to start a project:
 
-   i. Start with as simple as a `Hi` or `Help me develop ...`.
+   i. Start with as simple as a ` Hi ` or ` I want to build an application that ... `.
 
    ii. Alternatively, kick-off the ideation phase:
       ```
@@ -37,7 +39,9 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 5. Track progress at any time by reading `STATUS.md` or by asking claude.
 
+
 ---
+
 
 **Table of Contents**
 
@@ -65,7 +69,9 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 - [**License**](#license)
 
+
 ---
+
 
 # Why SpecGantry?
 
@@ -73,7 +79,7 @@ Most AI coding tools jump straight to code generation. SpecGantry doesn't.
 
 It treats Claude Code not as an autocomplete engine, but as a **collaborative engineering partner** that actively governs an entire project lifecycle — from raw idea to production-ready release. The framework enforces a structured sequence of phases, each gated by review and approval, so the team never moves forward on an ambiguous or incomplete foundation.
 
-**Key benefits:**
+## Key benefits:
 
 - **No phantom features** — every feature is specified before it is coded, and every specification is reviewed before design begins.
 - **Full traceability** — code links back to component specs, specs link back to architecture, architecture links back to project goals.
@@ -81,7 +87,9 @@ It treats Claude Code not as an autocomplete engine, but as a **collaborative en
 - **Repeatable process** — the same structured workflow applies to greenfield projects, new releases, and maintenance cycles, so any stakeholder can pick up the project state at any point.
 - **Deployment confidence** — a dedicated Deployment Readiness phase produces a full release package (changelog, code review gate, tech debt scan, smoke test plan, rollback plan, and release communication) before any deployment is attempted.
 
+
 ---
+
 
 # The Bigger Picture: The Governed Workflow
 
@@ -96,7 +104,9 @@ Each phase consists of:
 
 The project's ground truth lives in the `./SPECS/` directory. Source code lives in `./src/`. Deployment artifacts live in `./deploy/`. The `./STATUS.md` file is the single pane of glass for project health at any moment.
 
+
 ---
+
 
 # Lifecycle Phases
 
@@ -152,7 +162,9 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
              repeat full cycle)
 ```
 
+
 ---
+
 
 ## Phase 1 — Ideation
 
@@ -169,7 +181,6 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 **Skills:** `/ideate`, `/brainstorm`  
 **Primary artifact:** `./SPECS/artifacts/A_Project.md`
 
----
 
 ## Phase 2 — Planning
 
@@ -187,7 +198,6 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 **Skills:** `/plan`, `/brainstorm`  
 **Primary artifact:** `./SPECS/artifacts/B_Architecture.md`
 
----
 
 ## Phase 3 — Detailed Design
 
@@ -204,7 +214,6 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 **Skills:** `/detailed-design <ComponentName>`, `/brainstorm`  
 **Primary artifacts:** `./SPECS/components/<ComponentName>/`
 
----
 
 ## Phase 4 — Development
 
@@ -222,7 +231,6 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 **Skills:** `/develop <ComponentName>`, `/explain-code`  
 **Primary artifacts:** `./src/`, `./SPECS/components/<ComponentName>/A_Core_Spec.md`
 
----
 
 ## Phase 5 — Deployment Readiness
 
@@ -244,7 +252,6 @@ All files land in `./deploy/rel_yyyy.mm.dd.hhmm/`. If all checks pass, `STATUS.m
 **Skills:** `/deployment-readiness`  
 **Primary artifacts:** `./deploy/rel_yyyy.mm.dd.hhmm/`
 
----
 
 ## Maintenance
 
@@ -252,22 +259,33 @@ When a live release needs changes, SpecGantry enters Maintenance mode on a **new
 
 **Skills:** `/explain-code`
 
+
 ---
+
 
 # Skills Reference
 
-| Skill | Phase | Invocable | Description |
-| :--- | :--- | :--: | :-- |
-| `/ideate` | Ideation | Yes | Drives raw idea -> complete, feasibility-validated `A_Project.md` |
-| `/plan` | Planning | Yes | Drives `A_Project.md` -> complete `B_Architecture.md` with all technical decisions |
-| `/detailed-design <component>` | Detailed Design | Yes | Produces up to 3 specification documents for one component |
-| `/develop <component>` | Development | Yes | Implements all features for one component with code + user docs |
-| `/deployment-readiness` | Deployment Gate | Yes | Generates 7-stage release readiness package |
-| `/brainstorm <issue>` | Any phase | Yes | Structured debate-format brainstorm for unresolved trade-offs |
-| `/explain-code <snippet>` | Any phase | Yes | Plain-language explanation of a code snippet |
-| `/documentation` | Development | No | Called by `/develop` to generate Bootstrap-styled HTML user documentation for each implemented feature |
+## Invocable Skills
+
+| Skill | Phase | Description |
+| :--- | :--- | :-- |
+| `/ideate` | Ideation | Drives raw idea -> complete, feasibility-validated `A_Project.md` |
+| `/plan` | Planning | Drives `A_Project.md` -> complete `B_Architecture.md` with all technical decisions |
+| `/detailed-design <component>` | Detailed Design | Produces up to 3 specification documents for one component |
+| `/develop <component>` | Development | Implements all features for one component with code + user docs |
+| `/deployment-readiness` | Deployment Gate | Generates 7-stage release readiness package |
+
+## Non-invocable Skills
+
+| Skill | Description |
+| :--- | :-- |
+| `/explain-code <snippet>` | Plain-language explanation of a code snippet |
+| `/brainstorm <issue>` | Structured debate-format brainstorm for unresolved trade-offs |
+| `/documentation` | Called by `/develop` to generate Bootstrap-styled HTML user documentation for each implemented feature |
+
 
 ---
+
 
 # Disclaimer
 
@@ -279,7 +297,9 @@ SpecGantry does **NOT** contain, distribute, or derive from any Anthropic source
 
 Users are solely responsible for reviewing any AI-generated output produced through use of this framework and for ensuring compliance with applicable laws, regulations, and Anthropic's usage policies.
 
+
 ---
+
 
 # License
 
