@@ -2,6 +2,7 @@
 name: plan
 description: Drives the planning phase from a complete A_Project.md to a fully defined B_Architecture.md with decisions, assumptions, and risks captured — gating entry into the Development phase.
 user-invocable: true
+author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0 (see LICENSE in project root)
 ---
 

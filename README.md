@@ -27,6 +27,7 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
   - [Maintenance](#maintenance)
 - [Cross-Phase Skills](#cross-phase-skills)
 - [Skills Reference](#skills-reference)
+- [Disclaimer](#disclaimer)
 - [License](#license)
 
 ---
@@ -279,6 +280,18 @@ Two skills are available at any phase:
 
 ---
 
+## Disclaimer
+
+SpecGantry is provided **"AS IS"**, without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. In no event shall the author be liable for any claim, damages, or other liability arising from the use of this software.
+
+This project is an **independent, community-developed framework** and is **not affiliated with, endorsed by, sponsored by, or officially supported by Anthropic, PBC** in any way. "Claude" and "Claude Code" are trademarks of Anthropic, PBC. Their use here is solely for descriptive purposes to identify the runtime environment with which SpecGantry is compatible.
+
+SpecGantry does **NOT** contain, distribute, or derive from any Anthropic source code, SDK, or proprietary assets. The Claude Code runtime is a separate product governed by Anthropic's own terms of service and must be installed independently.
+
+Users are solely responsible for reviewing any AI-generated output produced through use of this framework and for ensuring compliance with applicable laws, regulations, and Anthropic's usage policies.
+
+---
+
 ## License
 
-Apache-2.0 — see [LICENSE](LICENSE) for details.
+Apache-2.0 — Copyright 2026 Mangesh Pise. See [LICENSE](LICENSE) and [NOTICE](NOTICE) for details.

@@ -1,6 +1,8 @@
 ---
 name: architecture
 description: Describe the technical architecture details for this project.
+author: Mangesh Pise <mppise@gmail.com>
+license: Apache-2.0 (see LICENSE in project root)
 ---
 
 # ARCHITECTURE

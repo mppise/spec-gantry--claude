@@ -3,6 +3,7 @@ name: detailed-design
 argument-hint: functional_component_name
 description: Drives the detailed design phase for one of the component identified in the architecture planning phase.
 user-invocable: true
+author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0 (see LICENSE in project root)
 ---
 

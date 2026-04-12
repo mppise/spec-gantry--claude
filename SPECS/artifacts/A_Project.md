@@ -1,6 +1,8 @@
 ---
 name: project
 description: Describe the project idea.
+author: Mangesh Pise <mppise@gmail.com>
+license: Apache-2.0 (see LICENSE in project root)
 ---
 
 #  <!-- Project name -->

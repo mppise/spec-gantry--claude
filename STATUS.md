@@ -1,6 +1,8 @@
 ---
 name: status
 description: Maintains status of the project lifecycle developed using SpecGantry.
+author: Mangesh Pise <mppise@gmail.com>
+license: Apache-2.0 (see LICENSE in project root)
 ---
 
 # Project Status Tracker

@@ -2,6 +2,7 @@
 name: deployment-readiness
 description: Produces a consolidated release readiness audit and a self-contained deployment engine (go.sh) to gate entry into the Deployment phase.
 user-invocable: true
+author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0 (see LICENSE in project root)
 ---
 

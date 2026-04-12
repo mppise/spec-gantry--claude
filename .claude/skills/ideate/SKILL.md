@@ -2,6 +2,7 @@
 name: ideate
 description: Drives the ideation phase from raw idea to a complete, feasibility-validated A_Project.md with seeded artifacts — gating entry into the Planning phase.
 user-invocable: true
+author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0 (see LICENSE in project root)
 ---
 

@@ -3,6 +3,7 @@ name: develop
 argument-hint: functional_component_name
 description: Drives the development phase by implementing features against the architecture plan, maintaining artifacts, and keeping the build clean — gating exit via the deployment-readiness skill.
 user-invocable: true
+author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0 (see LICENSE in project root)
 ---
 

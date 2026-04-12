@@ -3,6 +3,7 @@ name: documentation
 argument-hint: key_feature
 description: Generates user documentation for a given feature.
 user-invocable: false
+author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0 (see LICENSE in project root)
 ---
 
