@@ -13,6 +13,10 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 - Bash/Zsh environment (Linux, macOS, or WSL).
 
 ## Setup
+
+> **Are you a developer looking to use SpecGantry in your project?** Follow the steps below to get started.  
+> If you want to **contribute** to SpecGantry itself, please visit [CONTRIBUTING.md](CONTRIBUTING.md) instead.
+
 1. To integrate Spec-Gantry into your project, run the following command in your **project's root directory**. This will download the latest version of the framework and configure the necessary permissions automatically.
    ```
    curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
