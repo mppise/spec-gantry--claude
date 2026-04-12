@@ -1,60 +1,16 @@
----
-name: readme
-description: Explains what is SpecGantry.
-author: Mangesh Pise <mppise@gmail.com>
-license: Apache-2.0
----
-
 # SpecGantry — Spec-Driven Development for Claude Code
 
 SpecGantry is a project lifecycle governance framework built on top of [Claude Code](https://claude.ai/code). It brings the discipline of spec-driven development to AI-assisted software engineering — ensuring that every line of code is traceable to a design, every design is traceable to architecture, and every architecture decision is grounded in a validated project idea.
 
 ---
 
-## Table of Contents
+# Getting Started
 
-- [Why SpecGantry?](#why-specgantry)
-- [The Bigger Picture: The Governed Workflow](#the-bigger-picture-the-governed-workflow)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-- [Lifecycle Phases](#lifecycle-phases)
-  - [Phase 1 — Ideation](#phase-1--ideation)
-  - [Phase 2 — Planning](#phase-2--planning)
-  - [Phase 3 — Detailed Design](#phase-3--detailed-design)
-  - [Phase 4 — Development](#phase-4--development)
-  - [Phase 5 — Deployment Readiness](#phase-5--deployment-readiness)
-  - [Maintenance](#maintenance)
-- [Cross-Phase Skills](#cross-phase-skills)
-- [Skills Reference](#skills-reference)
-- [Disclaimer](#disclaimer)
-- [License](#license)
-
----
-
-## Why SpecGantry?
-
-Most AI coding tools jump straight to code generation. SpecGantry doesn't.
-
-It treats Claude Code not as an autocomplete engine, but as a **collaborative engineering partner** that actively governs an entire project lifecycle — from raw idea to production-ready release. The framework enforces a structured sequence of phases, each gated by review and approval, so the team never moves forward on an ambiguous or incomplete foundation.
-
-**Key benefits:**
-
-- **No phantom features** — every feature is specified before it is coded, and every specification is reviewed before design begins.
-- **Full traceability** — code links back to component specs, specs link back to architecture, architecture links back to project goals.
-- **Built-in governance** — assumptions, decisions, and risks are tracked in dedicated artifacts throughout the lifecycle. Open items block progress until resolved.
-- **Repeatable process** — the same structured workflow applies to greenfield projects, new releases, and maintenance cycles, so any stakeholder can pick up the project state at any point.
-- **Deployment confidence** — a dedicated Deployment Readiness phase produces a full release package (changelog, code review gate, tech debt scan, smoke test plan, rollback plan, and release communication) before any deployment is attempted.
-
----
-
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 - [Claude Code](https://claude.ai/code) installed and authenticated.
 - Bash/Zsh environment (Linux, macOS, or WSL).
 
-### Setup
+## Setup
 1. To integrate Spec-Gantry into your project, run the following command in your __project's root directory__. This will download the latest version of the framework and configure the necessary permissions automatically.
    ```
    curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
@@ -83,7 +39,51 @@ It treats Claude Code not as an autocomplete engine, but as a **collaborative en
 
 ---
 
-## The Bigger Picture: The Governed Workflow
+**Table of Contents**
+
+- [**Why SpecGantry?**](#why-specgantry)
+
+- [**The Bigger Picture**: The Governed Workflow](#the-bigger-picture-the-governed-workflow)
+
+- [**Lifecycle Phases**](#lifecycle-phases)
+
+  - [Phase 1 — Ideation](#phase-1--ideation)
+
+  - [Phase 2 — Planning](#phase-2--planning)
+
+  - [Phase 3 — Detailed Design](#phase-3--detailed-design)
+
+  - [Phase 4 — Development](#phase-4--development)
+
+  - [Phase 5 — Deployment Readiness](#phase-5--deployment-readiness)
+
+  - [Maintenance](#maintenance)
+
+- [**Skills Reference**](#skills-reference)
+
+- [**Disclaimer**](#disclaimer)
+
+- [**License**](#license)
+
+---
+
+# Why SpecGantry?
+
+Most AI coding tools jump straight to code generation. SpecGantry doesn't.
+
+It treats Claude Code not as an autocomplete engine, but as a **collaborative engineering partner** that actively governs an entire project lifecycle — from raw idea to production-ready release. The framework enforces a structured sequence of phases, each gated by review and approval, so the team never moves forward on an ambiguous or incomplete foundation.
+
+**Key benefits:**
+
+- **No phantom features** — every feature is specified before it is coded, and every specification is reviewed before design begins.
+- **Full traceability** — code links back to component specs, specs link back to architecture, architecture links back to project goals.
+- **Built-in governance** — assumptions, decisions, and risks are tracked in dedicated artifacts throughout the lifecycle. Open items block progress until resolved.
+- **Repeatable process** — the same structured workflow applies to greenfield projects, new releases, and maintenance cycles, so any stakeholder can pick up the project state at any point.
+- **Deployment confidence** — a dedicated Deployment Readiness phase produces a full release package (changelog, code review gate, tech debt scan, smoke test plan, rollback plan, and release communication) before any deployment is attempted.
+
+---
+
+# The Bigger Picture: The Governed Workflow
 
 SpecGantry organizes the collaboration between a **DevLead** (you) and **SpecGantry** (Claude Code) across five ordered phases. This is not just a sequence of steps, but a **Governed Workflow** based on a **Draft -> Review -> Finalize** loop.
 
@@ -98,7 +98,7 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 ---
 
-## Lifecycle Phases
+# Lifecycle Phases
 
 ```
         ┌─────────────────────────────┐
@@ -154,7 +154,7 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 ---
 
-### Phase 1 — Ideation
+## Phase 1 — Ideation
 
 **Goal:** Convert a raw project idea into a complete, feasibility-validated `A_Project.md` that can support the planning phase.
 
@@ -171,7 +171,7 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 ---
 
-### Phase 2 — Planning
+## Phase 2 — Planning
 
 **Goal:** Translate the validated project idea into a complete technical architecture documented in `B_Architecture.md`, with all open decisions, assumptions, and risks logged.
 
@@ -189,7 +189,7 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 ---
 
-### Phase 3 — Detailed Design
+## Phase 3 — Detailed Design
 
 **Goal:** Produce a full specification package for each functional component identified during architecture planning.
 
@@ -206,7 +206,7 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 ---
 
-### Phase 4 — Development
+## Phase 4 — Development
 
 **Goal:** Implement all features for a given component, keeping code traceable to specs, well-documented, and paired with user-facing documentation.
 
@@ -224,7 +224,7 @@ The project's ground truth lives in the `./SPECS/` directory. Source code lives 
 
 ---
 
-### Phase 5 — Deployment Readiness
+## Phase 5 — Deployment Readiness
 
 **Goal:** Produce a complete release readiness package and gate entry into actual deployment.
 
@@ -246,7 +246,7 @@ All files land in `./deploy/rel_yyyy.mm.dd.hhmm/`. If all checks pass, `STATUS.m
 
 ---
 
-### Maintenance
+## Maintenance
 
 When a live release needs changes, SpecGantry enters Maintenance mode on a **new git branch**. The full five-phase cycle repeats on that branch with the same governance rigor. Live artifacts are treated as read-only until the new cycle formally changes them.
 
@@ -254,18 +254,7 @@ When a live release needs changes, SpecGantry enters Maintenance mode on a **new
 
 ---
 
-## Cross-Phase Skills
-
-Two skills are available at any phase:
-
-| Skill | When to use | Governance |
-| :--- | :--- | :--- |
-| `/brainstorm <issue>` | Any time a decision has no clear answer or involves significant trade-offs. | The "Judge's Verdict" is a recommendation; DevLead must explicitly approve the path before it's recorded. |
-| `/explain-code <snippet>` | Any time you need a plain-language explanation of a piece of code. | Must explicitly state how implementation aligns with `B_Architecture.md` and flag "Design Divergences". |
-
----
-
-## Skills Reference
+# Skills Reference
 
 | Skill | Phase | Invocable | Description |
 | :--- | :--- | :--: | :-- |
@@ -280,7 +269,7 @@ Two skills are available at any phase:
 
 ---
 
-## Disclaimer
+# Disclaimer
 
 SpecGantry is provided **"AS IS"**, without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. In no event shall the author be liable for any claim, damages, or other liability arising from the use of this software.
 
@@ -292,6 +281,6 @@ Users are solely responsible for reviewing any AI-generated output produced thro
 
 ---
 
-## License
+# License
 
 Apache-2.0 — Copyright 2026 Mangesh Pise. See [LICENSE](LICENSE) and [NOTICE](NOTICE) for details.
