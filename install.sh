@@ -19,17 +19,8 @@ echo -e "  • Claude Code is not included and must be installed separately."
 echo -e "  • This is an independent framework; NOT affiliated with Anthropic, PBC."
 echo -e "${GREEN}------------------------------------------------------------${NC}\n"
 
-# --- Confirmation ---
-echo -e "Target directory: ${CYAN}$(pwd)${NC}"
-printf "Install SpecGantry in this directory? [y/N] "
-read -r confirm
-if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
-    echo "Installation cancelled."
-    exit 0
-fi
-
 # --- Installation Logic ---
-echo -e "\nStarting installation..."
+echo -e "Installing SpecGantry in: ${CYAN}$(pwd)${NC}"
 
 # 1. Create a temporary workspace
 echo -e "${CYAN}  ... Fetching latest files${NC}"
