@@ -1,7 +1,6 @@
 ---
 name: architecture
 description: Describe the technical architecture details for this project.
-author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0 (see LICENSE in project root)
 ---
 
@@ -93,37 +92,55 @@ The project may utilize following AI technolgies:
 
 <!-- What does the user-facing surface look like? Identify the key user flows and whether a design system or component library is in play. Mobile-first, Cloud-first, and AI-first principles must be mandatorily considered and applied where relevant. -->
 
+---
+
 ## Observability & Analytics
 
 <!-- How will the system be monitored in production? Cover operational observability (logging, tracing, alerting, dashboards) and product analytics (user behavior tracking, funnel metrics, analytics platform). What does "something is wrong" look like and who gets paged? Logging must be structured (log-level, coded, context, etc.), centralized (custom logging service), and traceable (origin, correlation, etc.). -->
+
+---
 
 ## Security
 
 <!-- How is access controlled? Are there any authentication, authorization, or data sensitivity concerns? -->
 
+---
+
 ## Compliance & Privacy
 
 <!-- Are there regulatory requirements (GDPR, CCPA, HIPAA, SOC 2, etc.)? How is PII identified, protected, and retained or purged? Are there audit-logging or right-to-erasure obligations? -->
+
+---
 
 ## Third-party Integrations
 
 <!-- What external services, SDKs, or webhooks does the system depend on? For each: what is the failure mode if it is unavailable, and is there a fallback? -->
 
+---
+
 ## Scalability
 
 <!-- What are the expected traffic or load levels at launch and at 10× growth? Is the design horizontal or vertical? Where are the bottlenecks and how will they be addressed? -->
+
+---
 
 ## Error Handling & Resilience
 
 <!-- How does the system behave under partial failures? Identify retry policies, circuit-breaker patterns, graceful degradation paths, and recovery procedures for critical flows. -->
 
+---
+
 ## Notifications & Messaging
 
 <!-- Does the system need to send notifications (email, push, SMS, in-app)? If so, what platform handles delivery, and how are preferences, opt-outs, and delivery failures managed? -->
 
+---
+
 ## Deployment
 
 <!-- Where does this run and how does it get there? What does the target environment look like? Document the platform, secrets strategy, and deploy mechanism. Do NOT include deployment scripts or CI/CD pipeline files in the development plan — these are produced by the Deployment phase, not the Development phase. -->
+
+---
 
 ## Testing Strategy
 
@@ -141,4 +158,4 @@ The project may utilize following AI technolgies:
 
 <!-- identify any libraries, how they need to be installed and packaged with the code. only list them here and add a record to the decision artifacts as only libraries that have been approved by me must be used in this project. my decision will be based on multiple factors, such as, popularity, security postures, competitive profiles, legal perspectives, etc. so if you can add some __verified__ details about these factors in your list, that will help drive faster decisions. -->
 
-
+---
