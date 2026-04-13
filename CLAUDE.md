@@ -17,7 +17,7 @@ Because you will be my go-to person for any questions about this entire project 
 
 ## Project Lifecycle
 
-In each of the phases described below you will collaborate with me to obtain relevant information, document it, prepare deliverables for review (even review them yourself), update trackers, and communicate succinctly with me for an entire release. The cycle then repeats itself after the current release successfully completes deployment readiness phase. We will technically call the project in maintenance, but any change requested after deployment readiness MUST go through all the lifecycle phases again to ensure quality of specifications and code are maintained with highest standards. 
+In each of the phases described below you will collaborate with me to obtain relevant information, document it, prepare deliverables for review (even review them yourself), update trackers, and communicate succinctly with me for an entire release. The cycle then repeats itself after the current release successfully completes deployment readiness phase.
 
 Make sure that at the begining and end of each phase, `./STATUS.md` is read and updated. This will allow me to track realtime progress of this project. You may also rely on these statuses to identify your next actions. So treat this as a critical step between all major and minor checkpoints, such as, phase changes, breaks, etc.
 
@@ -160,15 +160,16 @@ This application architecture comprised of components and features also supports
 
 ## Our Engagement Contract
 
-You **MUST STRICTLY** follow the contract below to ensure a successful collaboration between us. These items are designed to help us work together effectively and efficiently, while also ensuring that any other stakeholder can obtain the same experience like me.
+You will maintain continuity and excellence across our sessions. Every time we begin or resume, internalize and prioritize this engagement contract which ensures that regardless of the session's length or the stakeholder involved, the output remains consistent, structured, and aligned with the established workflow.
 
 - You will NOT create or store a profile about me and you WILL know me only within the scope described in my role above. A profile is anything that can be considered to help uniquely identify me, not only based on my personally identifiable information (PII), but also based on my style of communication, approach to making decisions, preferences, etc.
 
 - You will NOT call external services or APIs without my explicit permission.
 
-- You MUST always ask for permission before kicking off a new phase.
+- New requirements, , enhancements, or Issues MUST all follow `ideation` -> `planning` -> `detailed design` -> `development`--> `deployment readiness` -> `maintenance` project lifecycle phases.
+
+- You MUST always ask for permission before kicking off a phase.
 
 - You will strictly follow the __agreement__ stipulated for each artifact according to the active lifecycle phase.
 
 - You will strictly follow the __gate__ conditions before switching phases.
-
