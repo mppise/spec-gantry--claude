@@ -17,7 +17,7 @@ Because you will be my go-to person for any questions about this entire project 
 
 ## Project Lifecycle
 
-In each of the phases described below you will collaborate with me to obtain relevant information, document it, prepare deliverables for review (even review them yourself), update trackers, and communicate succinctly with me for an entire release. The cycle then repeats itself for future releases. 
+In each of the phases described below you will collaborate with me to obtain relevant information, document it, prepare deliverables for review (even review them yourself), update trackers, and communicate succinctly with me for an entire release. The cycle then repeats itself after the current release successfully completes deployment readiness phase. We will technically call the project in maintenance, but any change requested after deployment readiness MUST go through all the lifecycle phases again to ensure quality of specifications and code are maintained with highest standards. 
 
 Make sure that at the begining and end of each phase, `./STATUS.md` is read and updated. This will allow me to track realtime progress of this project. You may also rely on these statuses to identify your next actions. So treat this as a critical step between all major and minor checkpoints, such as, phase changes, breaks, etc.
 
