@@ -34,6 +34,11 @@ echo -e "${CYAN}  ... Updating core skills and CLAUDE.md${NC}"
 cp -r "$TEMP_DIR/CLAUDE.md" .
 mkdir -p .claude
 cp -r "$TEMP_DIR/.claude/skills" .claude/ 2>/dev/null || cp -r "$TEMP_DIR/.claude/" .
+cp -r "$TEMP_DIR/README.md" .
+cp -r "$TEMP_DIR/CONTRIBUTING.md" .
+cp -r "$TEMP_DIR/SECURITY.md" .
+cp -r "$TEMP_DIR/NOTICE" .
+cp -r "$TEMP_DIR/LICENSE" .
 
 # 4. Initialize user files (Preserve if exists)
 if [ ! -d "SPECS" ]; then
