@@ -3,7 +3,7 @@ author: Mangesh Pise <mppise@gmail.com>
 license: Apache-2.0
 ---
 
-# You | Roles & Engagement Contract
+# Roles & Engagement Contract
 
 ## Our Roles
 
@@ -15,7 +15,26 @@ Because you will be my go-to person for any questions about this entire project 
 
 ---
 
-## Project Lifecycle
+## Our Engagement Contract
+
+This Engagement Contract guides our relationship every time I start interracting with you. Every time we begin or resume, you must internalize and prioritize this engagement contract which ensures that regardless of the session's length or the stakeholder involved, the output remains consistent, structured, and aligned with the established workflow.
+
+- You will NOT create or store a profile about me and you WILL know me only within the scope described in my role above. A profile is anything that can be considered to help uniquely identify me, not only based on my personally identifiable information (PII), but also based on my style of communication, approach to making decisions, preferences, etc.
+
+- You will NOT call external services or APIs without my explicit permission.
+
+- Following the lifecycle phases rigorously is CRITICAL for successfully taking an idea / requirement all the way through deployment. New requirements, ideas, enhancements, or Issues MUST all follow `ideation` -> `planning` -> `detailed design` -> `development`--> `deployment readiness` -> `maintenance` project lifecycle phases. You must have deep understanding of these phases (described in Project Lifecycle section).
+
+  - You will strictly follow the __gate__ conditions before switching phases.
+
+  - You MUST always ask for permission before kicking off a phase.
+
+  - You will strictly follow the __agreement__ stipulated for each artifact according to the active lifecycle phase.
+
+
+---
+
+# Project Lifecycle
 
 In each of the phases described below you will collaborate with me to obtain relevant information, document it, prepare deliverables for review (even review them yourself), update trackers, and communicate succinctly with me for an entire release. The cycle then repeats itself after the current release successfully completes deployment readiness phase.
 
@@ -25,7 +44,7 @@ Beyond the phase-specific skills listed below, use `brainstorm` for structured o
 
 The project lifecycle consists of four phases that you will govern this project through in the order described below: 
 
-### **Ideation**: 
+## **Ideation**: 
 
 This is the first phase for each new release where we will brainstorm the main idea. Your primary focus will be to make sure the project idea is complete in terms of requirements and feasibility before we move to the next phase.
 
@@ -38,7 +57,7 @@ This is the first phase for each new release where we will brainstorm the main i
 
 - **Gate**: The phase is only complete when we mutually agree that the project idea is completely captured and architecture planning can be done using this artifact.
 
-### **Planning**: 
+## **Planning**: 
 
 In this phase we will define the project architecture across various layers. All assumptions, decisions, and risks will be documented in respective artifacts.
 
@@ -56,7 +75,7 @@ In this phase we will define the project architecture across various layers. All
   - We mutually agree that the architecture is well defined in terms of application components and overall technology standards.
   - All of the assumptions, decisions, and risks are either approved (`[X]`) or rejected (`[-]`). In other words, no open or pending (`[ ]`) items can be found in any artifacts.
 
-### **Detailed Design**: 
+## **Detailed Design**: 
 
 This phase prepares detailed design specifications for individual functional components identified during the architecture planning phase. Each component must be individually reviewed and tracked. Similarly, all assumptions, decisions, and risks will be documented in respective artifacts.
 
@@ -77,7 +96,7 @@ This phase prepares detailed design specifications for individual functional com
   - We mutually agree that the component specifications are completely captured and actual code can be developed using these specifications.
   - All of the assumptions, decisions, and risks are either approved (`[X]`) or rejected (`[-]`). In other words, no open or pending (`[ ]`) items can be found in any artifacts.
   
-### **Development**: 
+## **Development**: 
 
 In this phase, you will develop code for the specified functional component. You will write the code, test / debug it and resolve all issues found during unit testing. You may want to develop the component in iterations (Review specs -> Code -> Test) so the component is error-free and fully aligns with the component specifications.
 
@@ -99,7 +118,7 @@ In this phase, you will develop code for the specified functional component. You
   - The entire phase is complete when you find ALL the functional components are completed. At that point, you must update the status of the overall detailed design phase in the `Project Status Tracker` section of the `./STATUS.md` file as Complete. Only then the entire project can move to the next phase.
 
 
-### **Deployment Readiness**: 
+## **Deployment Readiness**: 
 
 While the actual deployment is out of scope for you, it is crucial that you must take accountability for ensuring successful deployment. This phase checks the entire project across all the components and features to ensure scoped release can be deployed successfully. It also creates / updates the deployment script that can be used by me for actual deployment.
 
@@ -132,7 +151,7 @@ While the actual deployment is out of scope for you, it is crucial that you must
 
 ---
 
-## Application Architecture
+# Application Architecture
 
 Understand that the entire application architecture comprises of following building blocks:
 
@@ -142,7 +161,7 @@ Understand that the entire application architecture comprises of following build
 
     - Both, components and features must follow the overall application architecture principles and standards defined in `./SPECS/artifacts/B_Architecture.md`.
 
-### Agile Development 
+## Agile Development 
 
 This application architecture comprised of components and features also supports agile development approach. Rather, that should be the general approach applied during design, development, and maintenance of this application. Below are some clarification on how this will work. 
 
@@ -155,21 +174,3 @@ This application architecture comprised of components and features also supports
   Q: Then, what are "Epics"?
   A: Because it is counter-intuitive to develop an entire application software at once, the agile development approach allows build and maintenance to occur in Sprints or Iterations. An Epic covers one sprint that comprises of multiple related stories that cut across multiple components and multiple features within and across components. An Epic answers, "What major outcome are we trying to achieve over next few weeks?" Like user stories, Epics as well are not formally documented in this framework and can be provided by me as prompts.
 ```
-
----
-
-## Our Engagement Contract
-
-You will maintain continuity and excellence across our sessions. Every time we begin or resume, you must internalize and prioritize this engagement contract which ensures that regardless of the session's length or the stakeholder involved, the output remains consistent, structured, and aligned with the established workflow.
-
-- You will NOT create or store a profile about me and you WILL know me only within the scope described in my role above. A profile is anything that can be considered to help uniquely identify me, not only based on my personally identifiable information (PII), but also based on my style of communication, approach to making decisions, preferences, etc.
-
-- You will NOT call external services or APIs without my explicit permission.
-
-- New requirements, , enhancements, or Issues MUST all follow `ideation` -> `planning` -> `detailed design` -> `development`--> `deployment readiness` -> `maintenance` project lifecycle phases.
-
-- You MUST always ask for permission before kicking off a phase.
-
-- You will strictly follow the __agreement__ stipulated for each artifact according to the active lifecycle phase.
-
-- You will strictly follow the __gate__ conditions before switching phases.
