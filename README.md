@@ -10,6 +10,8 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
 
 ## Prerequisites
 - [Claude Code](https://claude.ai/code) installed and authenticated.
+   - **NOTE** : **Claude Code can be in ANY mode _EXCEPT_ `plan mode` to utilize SpecGantry.**
+
 - Bash/Zsh environment (Linux, macOS, or WSL).
 
 ## Setup
@@ -21,11 +23,15 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
    ```
    curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash
    ```
+---
 
 2. Open Claude Code in your project directory.
    ```
    claude
    ```
+
+    **NOTE** : **Make sure Claude Code is NOT in `plan mode` to utilize SpecGantry.**
+---
 
 3. There are many ways to start a project:
 
@@ -38,8 +44,10 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
       Describe your project idea. 
    
    iii. Update `./SPECS/artifacts/A_Project.md` in part or full and engage with option (i) or (ii) above.
+---
    
 4. SpecGantry will guide you through the lifecycle phases.
+---
 
 5. Track progress at any time by reading `STATUS.md` or by asking claude.
 
@@ -97,7 +105,7 @@ It treats Claude Code not as an autocomplete engine, but as a **collaborative en
 
 # The Bigger Picture: The Governed Workflow
 
-SpecGantry organizes the collaboration between a **DevLead** (you) and **SpecGantry** (Claude Code) across five ordered phases. This is not just a sequence of steps, but a **Governed Workflow** based on a **Draft -> Review -> Finalize** loop.
+SpecGantry organizes the collaboration between a **DevLead** (you) and **SpecGantry** (this framework) across five ordered phases. This is not just a sequence of steps, but a **Governed Workflow** based on a **Draft -> Review -> Finalize** loop.
 
 Each phase consists of:
 - **A defined objective** — what must be true before the phase is done.
