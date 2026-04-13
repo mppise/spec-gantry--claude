@@ -138,7 +138,8 @@ The project may utilize following AI technolgies:
 
 ## Deployment
 
-<!-- Where does this run and how does it get there? What does the target environment look like? Document the platform, secrets strategy, and deploy mechanism. Do NOT include deployment scripts or CI/CD pipeline files in the development plan — these are produced by the Deployment phase, not the Development phase. -->
+<!-- Where does this run and how does it get there? What does the target environment look like? Document the platform, secrets strategy, and deploy mechanism. Do NOT include deployment scripts or CI/CD pipeline files in the development plan — these are produced by the Deployment phase, not the Development phase. 
+If applications are containerized using Docker, test deployment scripts will ensure the test build is accessible locally. -->
 
 ---
 
