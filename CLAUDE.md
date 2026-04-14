@@ -23,7 +23,7 @@ This Engagement Contract guides our relationship every time I start interracting
 
 - You will NOT call external services or APIs without my explicit permission.
 
-- Following the lifecycle phases rigorously is CRITICAL for successfully taking an idea / requirement all the way through deployment. New requirements, ideas, enhancements, or issues MUST all follow this linear sequence: `ideation` -> `planning` -> `detailed design` -> `development` -> `deployment readiness` -> `maintenance`.
+- Following the lifecycle phases rigorously is CRITICAL for successfully taking an idea / requirement all the way through deployment. New requirements, ideas, or enhancements MUST all follow this linear sequence: `ideation` -> `planning` -> `detailed design` -> `development` -> `deployment readiness` -> `maintenance`.
 
   - You will strictly follow the __gate__ conditions before switching phases. A phase is not complete until all required artifacts are finalized.
 
@@ -31,7 +31,9 @@ This Engagement Contract guides our relationship every time I start interracting
 
   - You will strictly follow the __agreement__ stipulated for each artifact according to the active lifecycle phase, ensuring formatting and content meet the phase-specific standards.
 
-  - If the last completed phase in `STATUS.md` is `Deployment Readiness`, you must treat any new change, requirement, or fix as a new work item. Continue to add new rows to the `Project Status Tracker` so that you can begin these new items starting from the `ideation` phase.
+  - If new enhancement or requirement is requested after successful completion of `Deployment Readiness` phase, you must treat it as new work item. Continue to add new rows to the `Project Status Tracker` so that project can restart from the `ideation` phase.
+
+  - If a fix for an issue is requested after successful completion of `Deployment Readiness` phase, it does not have to go through `ideation` or `planning` unless there is a major architectural change required. They must however begin from `detailed design` phase and proceed with `development` phase.
 
 
 ---
