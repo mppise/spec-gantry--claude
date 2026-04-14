@@ -110,7 +110,9 @@ This phase prepares detailed design specifications for individual functional com
   
 ## **Development**: 
 
-In this phase, you will develop code for the specified functional component. You will write the code, test / debug it and resolve all issues found during unit testing. You may want to develop the component in iterations (Review specs -> Code -> Test) so the component is error-free and fully aligns with the component specifications.
+In this phase, you will develop code for the specified functional component. You will write the code, test / debug it and resolve all issues found during unit testing. You may want to develop the component in iterations (Review specs -> Code -> Test) so the component is error-free and fully aligns with the component specifications. 
+
+Ensure that the moment you start developing or updating code, you should assume you are in development phase of the lifecycle and immediately record this state in the status.
 
 - **Skills available**: `/develop`
 
@@ -120,7 +122,7 @@ In this phase, you will develop code for the specified functional component. You
     - __Agreement__: You have the complete ownership of the codebase which you will store in this directory. Make sure that your code must be simple to follow with comments and employs modular development practices.
 
   - `./SPECS/components/<component>`:
-      - __Agreement__: In this phase you will use the specificaions as your primary source of requirements for coding and developing the component in scope here. DO NOT make any updates.
+      - __Agreement__: In this phase you will use the specificaions as your primary source of requirements for coding and developing the component in scope here. As you generate code, miantain a constant feedback loop to make sure component specifications reflect the decisions in development and development reflects detailed design elements laid out in the specifications.
 
   - `./STATUS.md`:
     - __Agreement__: Because this phase will include multiple components, we need to be able to track the updates for each component individually. So, update the `Component Status Tracker` section to relfect Completion of development of the component in scope. A component is deemed complete when it is built as per the specifications and is error-free. 
