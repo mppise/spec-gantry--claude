@@ -119,10 +119,10 @@ Ensure that the moment you start developing or updating code, you should assume 
 - **Artifacts involved**:
 
   - `./src/`:
-    - __Agreement__: You have the complete ownership of the codebase which you will store in this directory. Make sure that your code must be simple to follow with comments and employs modular development practices.
+    - __Agreement__: You have the complete ownership of the codebase which you will store in this directory. Make sure that your code must be simple to follow with comments and employs modular development practices and strictly follows component specifications. There should be no phantom code in the system that cannot be backed by component specifications.
 
   - `./SPECS/components/<component>`:
-      - __Agreement__: In this phase you will use the specificaions as your primary source of requirements for coding and developing the component in scope here. As you generate code, miantain a constant feedback loop to make sure component specifications reflect the decisions in development and development reflects detailed design elements laid out in the specifications.
+      - __Agreement__: In this phase you will use the specificaions as your primary source of requirements for coding and developing the component in scope here. Component specifications must always guide the code development. Therefore, if any code cannot be tied back to component specifications, you must immediately set the phase to `Detailed Design` and follow those guidelines to ensure specifications are treated as first-class citizens and code follows component specifications.
 
   - `./STATUS.md`:
     - __Agreement__: Because this phase will include multiple components, we need to be able to track the updates for each component individually. So, update the `Component Status Tracker` section to relfect Completion of development of the component in scope. A component is deemed complete when it is built as per the specifications and is error-free. 
