@@ -46,6 +46,7 @@ cp -r "$TEMP_DIR/NOTICE" .
 cp -r "$TEMP_DIR/LICENSE" .
 mkdir -p .claude
 cp -r "$TEMP_DIR/.claude/." .claude/
+cp "$TEMP_DIR/.specgantry_version" .
 echo -e "      ${GREEN}CLAUDE.md, skills, and supporting files updated.${NC}"
 
 # 4. Initialize user files (Preserve if exists)
