@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-settings.json",
+    "permissions": {
+        "allow": [],
+        "deny": []
+    },
+    "companyAnnouncements": [
+        "* * * * * * * * * * * * * * * DISCLAIMER * * * * * * * * * * * * * * * \n\nSpecGantry is provided \"AS IS\", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. In no event shall the author be liable for any claim, damages, or other liability arising from the use of this software.\n\nApache-2.0 — Copyright 2026 Mangesh Pise. See [LICENSE] and [NOTICE] for details.\n\n"
+    ],
+    "hooks": {
+        "SessionStart": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "echo 'Read CLAUDE.md and pay special attention to the **Engagement Contract** laid out in the document. Remember that this is a binding contract that must be followed without exceptions.'",
+                        "statusMessage": "Initiating SpecGantry session setup..."
+                    }
+                ]
+            }
+        ]
+    }
+}
