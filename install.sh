@@ -28,7 +28,7 @@ echo -e "\n${BOLD}Target directory:${NC} ${CYAN}$(pwd)${NC}\n"
 echo -e "[1/4] ${CYAN}Fetching latest release from GitHub...${NC}"
 TEMP_DIR=$(mktemp -d)
 
-# 2. Download and extract
+# 2. Download and extract (excludes .git automatically via tar strip)
 if ! curl -sL https://github.com/mppise/spec-gantry--claude/archive/refs/heads/main.tar.gz | tar -xz -C "$TEMP_DIR" --strip-components=1; then
     echo -e "      ${RED}ERROR: Failed to download SpecGantry. Check your internet connection and try again.${NC}\n"
     rm -rf "$TEMP_DIR"
@@ -36,20 +36,19 @@ if ! curl -sL https://github.com/mppise/spec-gantry--claude/archive/refs/heads/m
 fi
 echo -e "      ${GREEN}Done.${NC}"
 
-# 3. Update core framework files (Overwrite)
+# 3. Always overwrite core framework files (never README.md or .git)
 echo -e "\n[2/4] ${CYAN}Installing core framework files...${NC}"
-cp -r "$TEMP_DIR/CLAUDE.md" .
-cp -r "$TEMP_DIR/README.md" .
-cp -r "$TEMP_DIR/CONTRIBUTING.md" .
-cp -r "$TEMP_DIR/SECURITY.md" .
-cp -r "$TEMP_DIR/NOTICE" .
-cp -r "$TEMP_DIR/LICENSE" .
+cp "$TEMP_DIR/CLAUDE.md" .
+cp "$TEMP_DIR/CONTRIBUTING.md" .
+cp "$TEMP_DIR/SECURITY.md" .
+cp "$TEMP_DIR/NOTICE" .
+cp "$TEMP_DIR/LICENSE" .
+cp "$TEMP_DIR/.specgantry_version" .
 mkdir -p .claude
 cp -r "$TEMP_DIR/.claude/." .claude/
-cp "$TEMP_DIR/.specgantry_version" .
-echo -e "      ${GREEN}CLAUDE.md, skills, and supporting files updated.${NC}"
+echo -e "      ${GREEN}CLAUDE.md, .claude/, and supporting files updated.${NC}"
 
-# 4. Initialize user files (Preserve if exists)
+# 4. Initialize user files only if they do not exist (preserve existing work)
 echo -e "\n[3/4] ${CYAN}Checking for existing project files...${NC}"
 
 if [ ! -d "SPECS" ]; then

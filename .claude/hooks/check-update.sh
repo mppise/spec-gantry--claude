@@ -28,15 +28,14 @@ if [ "$REMOTE_VERSION" = "$LOCAL_VERSION" ]; then
 fi
 
 # --- New version detected: run the real installer silently ---
-echo "SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}). Installing..."
-curl -sfL --connect-timeout 5 -m 60 "$INSTALL_URL" | bash > /dev/null 2>&1
+INSTALL_OUTPUT=$(curl -sfL --connect-timeout 5 -m 60 "$INSTALL_URL" | bash 2>&1)
+INSTALL_EXIT=${PIPESTATUS[1]}
 
-INSTALL_EXIT=$?
 if [ $INSTALL_EXIT -ne 0 ]; then
-    echo "{\"systemMessage\": \"ERROR: SpecGantry installer failed (exit code ${INSTALL_EXIT}). Please update manually: curl -sfL ${INSTALL_URL} | bash\"}"
+    echo "{\"systemMessage\": \"SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}) but installer failed (exit ${INSTALL_EXIT}). Please update manually: curl -sfL ${INSTALL_URL} | bash\"}"
     exit 0
 fi
 
-# --- Installation succeeded: surface message cleanly without hook error ---
-echo "{\"systemMessage\": \"SpecGantry updated to v${REMOTE_VERSION}. Please restart Claude Code for the new version to take effect.\"}"
+# --- Installation succeeded ---
+echo "{\"systemMessage\": \"SpecGantry updated v${LOCAL_VERSION} → v${REMOTE_VERSION}. Please restart Claude Code for the new version to take effect.\"}"
 exit 0
