@@ -7,7 +7,7 @@ REMOTE_URL="https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/in
 LOCAL_VERSION_FILE="$(pwd)/.specgantry_version"
 
 # --- Fetch remote install.sh and extract version ---
-REMOTE_SCRIPT=$(curl -sfL "$REMOTE_URL" 2>/dev/null)
+REMOTE_SCRIPT=$(curl -sfL --connect-timeout 5 -m 10 "$REMOTE_URL" 2>/dev/null)
 if [ -z "$REMOTE_SCRIPT" ]; then
     # No network / repo unreachable — skip silently
     exit 0
@@ -30,9 +30,5 @@ if [ "$REMOTE_VERSION" = "$LOCAL_VERSION" ]; then
     exit 0
 fi
 
-# --- New version detected: run installer silently ---
-echo "New SpecGantry version detected (${REMOTE_VERSION}). Updating..."
-echo "$REMOTE_SCRIPT" | bash > /dev/null 2>&1
-
-# Emit message via hook stdout so Claude Code surfaces it
-echo "SpecGantry has been updated to v${REMOTE_VERSION} (was v${LOCAL_VERSION}). Please exit and restart Claude Code for the changes to take effect."
+# --- New version detected: notify only, do not auto-install ---
+echo "SpecGantry update available: v${REMOTE_VERSION} (current: v${LOCAL_VERSION}). Run the installer to update: curl -sfL https://raw.githubusercontent.com/mppise/spec-gantry--claude/main/install.sh | bash"
