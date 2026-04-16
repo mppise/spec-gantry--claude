@@ -30,8 +30,9 @@ TEMP_DIR=$(mktemp -d)
 
 # 2. Download and extract (excludes .git automatically via tar strip)
 curl -sL https://github.com/mppise/spec-gantry--claude/archive/refs/heads/main.tar.gz | tar -xz -C "$TEMP_DIR" --strip-components=1
-CURL_EXIT=${PIPESTATUS[0]}
-TAR_EXIT=${PIPESTATUS[1]}
+PIPE_STATUS=("${PIPESTATUS[@]}")
+CURL_EXIT=${PIPE_STATUS[0]}
+TAR_EXIT=${PIPE_STATUS[1]}
 if [ $CURL_EXIT -ne 0 ] || [ $TAR_EXIT -ne 0 ]; then
     echo -e "      ${RED}ERROR: Failed to download SpecGantry (curl: ${CURL_EXIT}, tar: ${TAR_EXIT}). Check your internet connection and try again.${NC}\n"
     rm -rf "$TEMP_DIR"

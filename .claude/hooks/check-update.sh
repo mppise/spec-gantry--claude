@@ -28,8 +28,14 @@ if [ "$REMOTE_VERSION" = "$LOCAL_VERSION" ]; then
 fi
 
 # --- New version detected: run the real installer silently ---
-INSTALL_OUTPUT=$(curl -sfL --connect-timeout 5 -m 60 "$INSTALL_URL" | bash 2>&1)
-INSTALL_EXIT=${PIPESTATUS[1]}
+INSTALL_SCRIPT=$(curl -sfL --connect-timeout 5 -m 60 "$INSTALL_URL" 2>&1)
+CURL_EXIT=$?
+if [ $CURL_EXIT -ne 0 ] || [ -z "$INSTALL_SCRIPT" ]; then
+    echo "{\"systemMessage\": \"SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}) but installer download failed. Please update manually: curl -sfL ${INSTALL_URL} | bash\"}"
+    exit 0
+fi
+INSTALL_OUTPUT=$(echo "$INSTALL_SCRIPT" | bash 2>&1)
+INSTALL_EXIT=$?
 
 if [ $INSTALL_EXIT -ne 0 ]; then
     echo "{\"systemMessage\": \"SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}) but installer failed (exit ${INSTALL_EXIT}). Please update manually: curl -sfL ${INSTALL_URL} | bash\"}"
