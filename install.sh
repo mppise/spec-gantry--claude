@@ -2,6 +2,8 @@
 # Copyright 2026 Mangesh Pise <mppise@gmail.com>
 # Licensed under the Apache License, Version 2.0 (see LICENSE in project root)
 
+SPECGANTRY_VERSION="2026.04.16"
+
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
@@ -72,8 +74,11 @@ echo -e "      ${GREEN}Done.${NC}"
 
 # --- Success ---
 echo -e "\n${GREEN}============================================================${NC}"
-echo -e "${GREEN}${BOLD}  SpecGantry installed successfully!${NC}"
+echo -e "${GREEN}${BOLD}  SpecGantry installed successfully!  ${CYAN}(v${SPECGANTRY_VERSION})${NC}"
 echo -e "${GREEN}============================================================${NC}"
+
+# Write installed version for update-check hook
+echo "$SPECGANTRY_VERSION" > .specgantry_version
 echo -e "\n${YELLOW}${BOLD}NEXT STEPS:${NC}"
 echo -e "  1. Install Claude Code (if not already):  ${CYAN}npm install -g @anthropic-ai/claude-code${NC}"
 echo -e "  2. Start a session in this directory:     ${CYAN}claude${NC}"

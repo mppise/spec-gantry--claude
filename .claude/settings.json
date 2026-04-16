@@ -13,6 +13,11 @@
                 "hooks": [
                     {
                         "type": "command",
+                        "command": "bash .claude/hooks/check-update.sh",
+                        "statusMessage": "Checking for SpecGantry updates..."
+                    },
+                    {
+                        "type": "command",
                         "command": "echo 'Read CLAUDE.md and pay special attention to the **Engagement Contract** laid out in the document. Remember that this is a binding contract that must be followed without exceptions.'",
                         "statusMessage": "Initiating SpecGantry orientation ..."
                     }
