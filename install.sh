@@ -29,8 +29,11 @@ echo -e "[1/4] ${CYAN}Fetching latest release from GitHub...${NC}"
 TEMP_DIR=$(mktemp -d)
 
 # 2. Download and extract (excludes .git automatically via tar strip)
-if ! curl -sL https://github.com/mppise/spec-gantry--claude/archive/refs/heads/main.tar.gz | tar -xz -C "$TEMP_DIR" --strip-components=1; then
-    echo -e "      ${RED}ERROR: Failed to download SpecGantry. Check your internet connection and try again.${NC}\n"
+curl -sL https://github.com/mppise/spec-gantry--claude/archive/refs/heads/main.tar.gz | tar -xz -C "$TEMP_DIR" --strip-components=1
+CURL_EXIT=${PIPESTATUS[0]}
+TAR_EXIT=${PIPESTATUS[1]}
+if [ $CURL_EXIT -ne 0 ] || [ $TAR_EXIT -ne 0 ]; then
+    echo -e "      ${RED}ERROR: Failed to download SpecGantry (curl: ${CURL_EXIT}, tar: ${TAR_EXIT}). Check your internet connection and try again.${NC}\n"
     rm -rf "$TEMP_DIR"
     exit 1
 fi
@@ -38,28 +41,28 @@ echo -e "      ${GREEN}Done.${NC}"
 
 # 3. Always overwrite core framework files (never README.md or .git)
 echo -e "\n[2/4] ${CYAN}Installing core framework files...${NC}"
-cp "$TEMP_DIR/CLAUDE.md" .
-cp "$TEMP_DIR/CONTRIBUTING.md" .
-cp "$TEMP_DIR/SECURITY.md" .
-cp "$TEMP_DIR/NOTICE" .
-cp "$TEMP_DIR/LICENSE" .
-cp "$TEMP_DIR/.specgantry_version" .
-mkdir -p .claude
-cp -r "$TEMP_DIR/.claude/." .claude/
+cp "$TEMP_DIR/CLAUDE.md" . || { echo -e "      ${RED}ERROR: Failed to copy CLAUDE.md${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
+cp "$TEMP_DIR/CONTRIBUTING.md" . || { echo -e "      ${RED}ERROR: Failed to copy CONTRIBUTING.md${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
+cp "$TEMP_DIR/SECURITY.md" . || { echo -e "      ${RED}ERROR: Failed to copy SECURITY.md${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
+cp "$TEMP_DIR/NOTICE" . || { echo -e "      ${RED}ERROR: Failed to copy NOTICE${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
+cp "$TEMP_DIR/LICENSE" . || { echo -e "      ${RED}ERROR: Failed to copy LICENSE${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
+cp "$TEMP_DIR/.specgantry_version" . || { echo -e "      ${RED}ERROR: Failed to copy .specgantry_version${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
+mkdir -p .claude || { echo -e "      ${RED}ERROR: Failed to create .claude/${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
+cp -r "$TEMP_DIR/.claude/." .claude/ || { echo -e "      ${RED}ERROR: Failed to copy .claude/${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
 echo -e "      ${GREEN}CLAUDE.md, .claude/, and supporting files updated.${NC}"
 
 # 4. Initialize user files only if they do not exist (preserve existing work)
 echo -e "\n[3/4] ${CYAN}Checking for existing project files...${NC}"
 
 if [ ! -d "SPECS" ]; then
-    cp -r "$TEMP_DIR/SPECS" .
+    cp -r "$TEMP_DIR/SPECS" . || { echo -e "      ${RED}ERROR: Failed to copy SPECS/${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
     echo -e "      ${GREEN}SPECS/ directory created with starter templates.${NC}"
 else
     echo -e "      ${YELLOW}SPECS/ already exists — skipped to preserve your work.${NC}"
 fi
 
 if [ ! -f "STATUS.md" ]; then
-    cp "$TEMP_DIR/STATUS.md" .
+    cp "$TEMP_DIR/STATUS.md" . || { echo -e "      ${RED}ERROR: Failed to copy STATUS.md${NC}"; rm -rf "$TEMP_DIR"; exit 1; }
     echo -e "      ${GREEN}STATUS.md initialized.${NC}"
 else
     echo -e "      ${YELLOW}STATUS.md already exists — skipped to preserve your work.${NC}"
@@ -79,3 +82,4 @@ echo -e "  1. Install Claude Code (if not already):  ${CYAN}npm install -g @anth
 echo -e "  2. Start a session in this directory:     ${CYAN}claude${NC}"
 echo -e "  3. Begin your first project with:         ${CYAN}/ideate${NC}"
 echo -e "\n${CYAN}Documentation: https://github.com/mppise/spec-gantry--claude${NC}\n"
+exit 0
