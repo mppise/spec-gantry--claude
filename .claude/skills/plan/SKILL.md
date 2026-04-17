@@ -25,3 +25,11 @@ This skill runs in three sequential stages. Do not skip or reorder them.
 # Recording Outcomes
 
 All changes during the planning phase are confined to `./SPECS/artifacts/B_Architecture.md`, `./SPECS/artifacts/C_Assumptions.md`, `./SPECS/artifacts/D_Decisions.md`, and `./SPECS/artifacts/E_Risks.md`. No other files are to be created or modified.
+
+Use following 10-character format to generate random unique IDs in each of the artifacts:
+    - [A|D|R]-ABC#12345
+i.e. 
+  - "[A|D|R]-" indicating the type of artifact (A for Assumption, D for Decision, R for Risk), 
+  - followed by first 3 random alphabets between A to Z, 
+  - followed by "#", 
+  - followed by 5 random numbers between 00001 to 99999
