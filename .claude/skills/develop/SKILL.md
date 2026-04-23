@@ -45,3 +45,13 @@ The source code itself will be created in `/src` directory, but no files should 
 
 Code must follow the scaffolding and formatting style as specified in `./CLAUDE.md` to ensure maintainability. All code should be traceable back to the specifications and architecture. Any new assumptions, risks, or unresolved items surfaced during development must be logged in the appropriate artifact in the `./SPECS/artifacts` directory.
 
+## Numbering System for Artifacts
+
+Use the following 10-character nomenclature to generate unique IDs in each of the artifacts:
+  ```
+  ^[ADR]-[a-zA-Z0-9]{8}$
+  ```
+  i.e. To reach exactly 10 characters, we break it down like this:
+  - Prefix (2 chars): [ADR]- (The letter + the hyphen).
+  - Suffix (8 chars): [a-zA-Z0-9]{8} (Any combination of alphanumeric characters).
+

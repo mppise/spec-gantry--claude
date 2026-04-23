@@ -49,3 +49,13 @@ This skill runs in two sequential stages. Do not skip or reorder them.
 The specification will be created in `./SPECS/components/{{ functional_component_name }}` directory, but no files should be created or modified outside of this sub-directory during this phase, except for logging any new assumptions, risks, or unresolved items in the appropriate artifact in the `./SPECS/artifacts` directory.
 
 Update the "Component Status Tracker" in `./STATUS.md` to reflect the current status of the detailed design for this component. Do not update status for any other component.
+
+## Numbering System for Artifacts
+
+Use the following 10-character nomenclature to generate unique IDs in each of the artifacts:
+  ```
+  ^[ADR]-[a-zA-Z0-9]{8}$
+  ```
+  i.e. To reach exactly 10 characters, we break it down like this:
+  - Prefix (2 chars): [ADR]- (The letter + the hyphen).
+  - Suffix (8 chars): [a-zA-Z0-9]{8} (Any combination of alphanumeric characters).

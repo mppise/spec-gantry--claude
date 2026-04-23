@@ -23,3 +23,13 @@ This skill runs in four sequential stages. Do not skip or reorder them.
 # Recording Outcomes
 
 All changes during the planning phase are confined to `./SPECS/artifacts/A_Project.md` and potentially `./SPECS/artifacts/C_Assumptions.md`. No other files are to be created or modified.
+
+## Numbering System for Artifacts
+
+Use the following 10-character nomenclature to generate unique IDs in each of the artifacts:
+  ```
+  ^[ADR]-[a-zA-Z0-9]{8}$
+  ```
+  i.e. To reach exactly 10 characters, we break it down like this:
+  - Prefix (2 chars): [ADR]- (The letter + the hyphen).
+  - Suffix (8 chars): [a-zA-Z0-9]{8} (Any combination of alphanumeric characters).
