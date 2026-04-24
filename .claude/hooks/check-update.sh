@@ -21,9 +21,14 @@ else
     LOCAL_VERSION="unknown"
 fi
 
+# --- Helper to emit a systemMessage JSON blob safely ---
+emit() {
+    python3 -c "import json,sys; print(json.dumps({'systemMessage': sys.argv[1]}))" "$1"
+}
+
 # --- Compare ---
 if [ "$REMOTE_VERSION" = "$LOCAL_VERSION" ]; then
-    echo "{\"systemMessage\": \"SpecGantry v${LOCAL_VERSION} is up to date.\"}"
+    emit "SpecGantry v${LOCAL_VERSION} is up to date."
     exit 0
 fi
 
@@ -31,17 +36,17 @@ fi
 INSTALL_SCRIPT=$(curl -sfL --connect-timeout 5 -m 60 "$INSTALL_URL" 2>&1)
 CURL_EXIT=$?
 if [ $CURL_EXIT -ne 0 ] || [ -z "$INSTALL_SCRIPT" ]; then
-    echo "{\"systemMessage\": \"SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}) but installer download failed. Please update manually: curl -sfL ${INSTALL_URL} | bash\"}"
+    emit "SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}) but installer download failed. Please update manually: curl -sfL ${INSTALL_URL} | bash"
     exit 0
 fi
 INSTALL_OUTPUT=$(echo "$INSTALL_SCRIPT" | bash 2>&1)
 INSTALL_EXIT=$?
 
 if [ $INSTALL_EXIT -ne 0 ]; then
-    echo "{\"systemMessage\": \"SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}) but installer failed (exit ${INSTALL_EXIT}). Please update manually: curl -sfL ${INSTALL_URL} | bash\"}"
+    emit "SpecGantry update detected (v${LOCAL_VERSION} → v${REMOTE_VERSION}) but installer failed (exit ${INSTALL_EXIT}). Please update manually: curl -sfL ${INSTALL_URL} | bash"
     exit 0
 fi
 
 # --- Installation succeeded ---
-echo "{\"systemMessage\": \"SpecGantry updated v${LOCAL_VERSION} → v${REMOTE_VERSION}. Please restart Claude Code for the new version to take effect.\"}"
+emit "SpecGantry updated v${LOCAL_VERSION} → v${REMOTE_VERSION}. Please restart Claude Code for the new version to take effect."
 exit 0

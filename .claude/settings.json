@@ -18,8 +18,8 @@
                     },
                     {
                         "type": "command",
-                        "command": "echo 'Read CLAUDE.md and pay special attention to the **Engagement Contract** laid out in the document. Remember that this is a binding contract that must be followed without exceptions.'",
-                        "statusMessage": "Initiating SpecGantry orientation ..."
+                        "command": "bash .claude/hooks/engagement-contract.sh",
+                        "statusMessage": "Loading SpecGantry engagement contract..."
                     }
                 ]
             }
@@ -29,8 +29,8 @@
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "echo 'Read CLAUDE.md and pay special attention to the **Engagement Contract** laid out in the document. Remember that this is a binding contract that must be followed without exceptions.'",
-                        "statusMessage": "Reviving SpecGantry orientation after compaction..."
+                        "command": "bash .claude/hooks/engagement-contract.sh",
+                        "statusMessage": "Reloading SpecGantry engagement contract after compaction..."
                     }
                 ]
             }
