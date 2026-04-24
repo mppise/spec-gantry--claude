@@ -44,6 +44,12 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
       Describe your project idea. 
    
    iii. Update `./SPECS/artifacts/A_Project.md` in part or full and engage with option (i) or (ii) above.
+
+   iv. **Already have an existing codebase?** Reverse-engineer it into SpecGantry artifacts:
+      ```
+      /reverse-engineer
+      ```
+      SpecGantry will analyze the codebase and generate `A_Project.md`, `B_Architecture.md`, and component specifications — letting you adopt spec-driven governance on an existing project without starting from scratch.
 ---
    
 4. SpecGantry will guide you through the lifecycle phases.
@@ -74,6 +80,8 @@ SpecGantry is a project lifecycle governance framework built on top of [Claude C
   - [Phase 5 — Deployment Readiness](#phase-5--deployment-readiness)
 
   - [Maintenance](#maintenance)
+
+  - [Reverse Engineering an Existing Project](#reverse-engineering-an-existing-project)
 
 - [**Skills Reference**](#skills-reference)
 
@@ -272,6 +280,13 @@ When a live release needs changes, SpecGantry enters Maintenance mode on a **new
 **Skills:** `/explain-code`
 
 
+## Reverse Engineering an Existing Project
+
+SpecGantry is not only for greenfield projects. If you have an existing codebase, `/reverse-engineer` analyzes it and generates the full artifact set — `A_Project.md`, `B_Architecture.md`, and component specifications under `./SPECS/components/` — so that the project can be brought under SpecGantry governance without manual documentation effort.
+
+**Skills:** `/reverse-engineer`
+
+
 ---
 
 
@@ -286,6 +301,7 @@ When a live release needs changes, SpecGantry enters Maintenance mode on a **new
 | `/detailed-design <component>` | Detailed Design | Produces up to 3 specification documents for one component |
 | `/develop <component>` | Development | Implements all features for one component with code + user docs |
 | `/deployment-readiness` | Deployment Gate | Generates 7-stage release readiness package |
+| `/reverse-engineer` | Any | Reverse-engineers an existing codebase into SpecGantry artifacts and component specs |
 
 ## Non-invocable Skills
 
@@ -294,6 +310,7 @@ When a live release needs changes, SpecGantry enters Maintenance mode on a **new
 | `/explain-code <snippet>` | Plain-language explanation of a code snippet |
 | `/brainstorm <issue>` | Structured debate-format brainstorm for unresolved trade-offs |
 | `/documentation` | Called by `/develop` to generate Bootstrap-styled HTML user documentation for each implemented feature |
+| `/reverse-engineer` | Analyzes an existing codebase and generates SpecGantry artifacts (`A_Project.md`, `B_Architecture.md`, component specs) to bring the project under spec-driven governance |
 
 
 ---
