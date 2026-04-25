@@ -79,11 +79,11 @@ A phase is **not complete** until ALL of the following are true:
 
 **Planning Gate:**
 - `B_Architecture.md` is finalized and mutually agreed upon.
-- No open (`[ ]`) items remain in `C_Assumption.md`, `D_Decisions.md`, or `E_Risks.md`.
+- No open (`[ ]`) items remain in `./SPECS/artifacts/C_Assumption.md`, `./SPECS/artifacts/D_Decisions.md`, or `./SPECS/artifacts/E_Risks.md`.
 
 **Detailed Design Gate:**
 - All in-scope component specs are finalized and mutually agreed upon.
-- No open (`[ ]`) items remain in `C_Assumption.md`, `D_Decisions.md`, or `E_Risks.md`.
+- No open (`[ ]`) items remain in `./SPECS/artifacts/C_Assumption.md`, `./SPECS/artifacts/D_Decisions.md`, or `./SPECS/artifacts/E_Risks.md`.
 - `STATUS.md` Component Status Tracker reflects `Ready` for all in-scope components.
 
 **Development Gate:**
