@@ -30,7 +30,7 @@ This skill runs in three sequential stages. Do not skip or reorder them.
 
 All changes are confined to `./SPECS/artifacts/B_Architecture.md`, `./SPECS/artifacts/C_Assumptions.md`, `./SPECS/artifacts/D_Decisions.md`, `./SPECS/artifacts/E_Risks.md`, and `./SPECS/components/{{ functional_component_name }}`. No other files in the actual source code are to be created or modified.
 
-Generate a well-structured report to document recommendations in architecture and design improvements in a `./SPECS/reverse-engineering/{{ yyyy.mm.dd_hh:mm }}.md` file.
+Generate a well-structured report to document recommendations in architecture and design improvements in a `./REV-ENG/{{ yyyy.mm.dd_hh:mm }}.md` file.
 
 ## Numbering System for Artifacts
 
