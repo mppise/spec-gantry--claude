@@ -41,7 +41,7 @@ This skill runs in four sequential stages. Do not skip or reorder them.
 
 # Recording Outcomes
 
-The source code itself will be created in `/src` directory, but no files should be created or modified outside of that during this phase.
+The source code itself will be created in `./src` directory, but no files should be created or modified outside of that during this phase. Even the environment variables must be used from `./src/.env`. If unavailable, create it and either update it with available information or request me to do that.
 
 Code must follow the scaffolding and formatting style as specified in `./CLAUDE.md` to ensure maintainability. All code should be traceable back to the specifications and architecture. Any new assumptions, risks, or unresolved items surfaced during development must be logged in the appropriate artifact in the `./SPECS/artifacts` directory.
 
