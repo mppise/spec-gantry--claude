@@ -49,7 +49,7 @@ Read and update `./STATUS.md` at the beginning and end of every phase, phase tra
 - `./SPECS/artifacts/B_Architecture.md`
   - Interview DevAgent to define architecture across all layers. Apply `CHG-XXX` tags for maintenance releases.
 
-- `./SPECS/artifacts/C_Assumption.md` | `D_Decisions.md` | `E_Risks.md`
+- `./SPECS/artifacts/C_Assumptions.md` | `D_Decisions.md` | `E_Risks.md`
   - Maintain these continuously. Status values: `[ ]` pending, `[X]` approved/confirmed, `[-]` rejected. No open items may exist at gate.
 
 **Gate:** Architecture is mutually agreed upon AND no open (`[ ]`) items remain in C, D, or E artifacts.
@@ -65,7 +65,7 @@ Read and update `./STATUS.md` at the beginning and end of every phase, phase tra
 - `./SPECS/components/<component>/<specification>.md`
   - Create one sub-directory per component. Apply `CHG-XXX` tags for maintenance releases.
 
-- `./SPECS/artifacts/C_Assumption.md` | `D_Decisions.md` | `E_Risks.md`
+- `./SPECS/artifacts/C_Assumptions.md` | `D_Decisions.md` | `E_Risks.md`
   - Same maintenance rules as Planning phase.
 
 - `./STATUS.md`
@@ -111,7 +111,7 @@ Read and update `./STATUS.md` at the beginning and end of every phase, phase tra
 
 - `./src/` — review only.
 - `./SPECS/components/` — review only.
-- `./SPECS/artifacts/C_Assumption.md` | `D_Decisions.md` | `E_Risks.md` — review only.
+- `./SPECS/artifacts/C_Assumptions.md` | `D_Decisions.md` | `E_Risks.md` — review only.
 
 - `./deploy/rel_yyyy.mm.dd.hhmm/release_audit.md`
   - Generate final audit results here. Header must show a clear **PASS** or **FAIL** verdict.
