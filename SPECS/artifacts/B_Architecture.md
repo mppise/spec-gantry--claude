@@ -72,16 +72,8 @@ The project may utilize following AI technolgies:
 
 - Vector Database: Preferred choice is <!-- recommend choices -->.
 
-- Prompt Engineering: All finalized prompts will be stored as templates in `./src/ai/prompts` directory in JSON format with structure as below:
+- Prompts: Must be stored in separate prompt files in markdown format <!-- manage prompts -->
 
-    ```
-    {
-       "system": "<!-- system prompt -->",
-       "context": "<!-- context -->",
-       "task": "<!-- tasks expected from LLM -->",
-       "format": "Generate response in JSON format using the structure provided here - ```json <!-- json response structure expected --> ```",
-    }
-    ```
 - MCP Servers: <!-- will this project deploy any MCP servers -->
 
 - MCP Client: <!-- will this project connect to any MCP servers -->
